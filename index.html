@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glass Lab · 글래스모피즘 UI 스튜디오</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <a href="#" class="brand" id="brandHome">Glass Lab <span>Studio</span></a>
+    <nav class="nav-tabs" aria-label="주요 메뉴">
+      <button type="button" class="nav-tab is-active" data-target="generator">생성기</button>
+      <button type="button" class="nav-tab" data-target="presets">프리셋</button>
+      <button type="button" class="nav-tab" data-target="showcase">쇼케이스</button>
+      <button type="button" class="nav-tab" data-target="guide">가이드</button>
+    </nav>
+  </header>
+
+  <main class="app-main" id="app">
+    <div class="views">
+      <!-- 생성기 -->
+      <section
+        class="view-section is-active glass-surface panel view-section--generator"
+        data-view="generator"
+        aria-labelledby="generator-title"
+      >
+        <h1 id="generator-title" class="section-heading section-heading--hero">CSS 생성기</h1>
+        <p class="section-tagline">슬라이더로 유리 질감을 조절하고, 코드로 바로 가져가세요.</p>
+        <div class="shell">
+          <div class="panel glass-surface panel--nest">
+            <h2 class="panel-title">미리보기 · Preview</h2>
+            <div class="preview-inner">
+              <div id="glassCard" role="img" aria-label="글래스모피즘 미리보기 카드"></div>
+            </div>
+          </div>
+
+          <div class="panel glass-surface panel--nest">
+            <h2 class="panel-title">컨트롤 · Controls</h2>
+
+            <div class="control-group">
+              <label for="blur">Blur <span class="value" id="blurVal">16px</span></label>
+              <input type="range" id="blur" min="0" max="40" value="16" step="1" />
+            </div>
+            <div class="control-group">
+              <label for="transparency">Transparency <span class="value" id="transparencyVal">35%</span></label>
+              <input type="range" id="transparency" min="5" max="95" value="35" step="1" />
+            </div>
+            <div class="control-group">
+              <label for="border">Border <span class="value" id="borderVal">1px</span></label>
+              <input type="range" id="border" min="0" max="6" value="1" step="1" />
+            </div>
+            <div class="control-group">
+              <label for="shadow">Shadow <span class="value" id="shadowVal">50%</span></label>
+              <input type="range" id="shadow" min="0" max="100" value="50" step="1" />
+            </div>
+
+            <div class="control-group control-group--color">
+              <label for="glassColor">
+                Glass color
+                <span class="value" id="glassColorVal">#ffffff</span>
+              </label>
+              <div class="color-row">
+                <input type="color" id="glassColor" value="#ffffff" title="글래스 틴트 색상" />
+                <span class="color-row-hint">배경 <code>rgba</code>에 반영됩니다</span>
+              </div>
+            </div>
+
+            <div class="control-actions">
+              <button type="button" class="reset-btn" id="resetBtn">초기화</button>
+            </div>
+
+            <div class="code-section">
+              <h3>생성된 CSS</h3>
+              <div class="code-wrap">
+                <pre id="cssOutput"></pre>
+                <div class="copy-row">
+                  <button type="button" class="copy-btn" id="copyBtn">Copy CSS</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 프리셋 -->
+      <section
+        class="view-section view-section--presets"
+        data-view="presets"
+        aria-labelledby="presets-title"
+      >
+        <h2 id="presets-title" class="section-heading">프리셋 라이브러리</h2>
+        <p class="section-lead">
+          30종 이상의 큐레이션 조합입니다. 카드를 누르면 슬라이더·미리보기·코드가 즉시 동기화됩니다.
+        </p>
+
+        <div class="preset-toolbar glass-surface" id="presetFilterBar" role="tablist" aria-label="프리셋 카테고리">
+          <button type="button" class="preset-filter-btn is-active" data-preset-filter="all" role="tab">All</button>
+          <button type="button" class="preset-filter-btn" data-preset-filter="soft" role="tab">Soft</button>
+          <button type="button" class="preset-filter-btn" data-preset-filter="vivid" role="tab">Vivid</button>
+          <button type="button" class="preset-filter-btn" data-preset-filter="dark" role="tab">Dark</button>
+          <button type="button" class="preset-filter-btn" data-preset-filter="glassy" role="tab">Glassy</button>
+        </div>
+
+        <div class="preset-grid" id="presetGrid"></div>
+      </section>
+
+      <!-- 쇼케이스 → 템플릿 라이브러리 -->
+      <section
+        class="view-section view-section--showcase"
+        data-view="showcase"
+        aria-labelledby="showcase-title"
+      >
+        <h2 id="showcase-title" class="section-heading">실전 UI 템플릿</h2>
+        <p class="section-lead">
+          총 <strong>13종</strong>의 실전 UI 템플릿입니다. 글래스 효과가 컴포넌트에 얹힌 모습을 인터랙티브로 확인하고, 각 카드의 <strong>현재 내 설정 적용하기</strong>로 생성기 수치를 즉시 반영할 수 있습니다.
+        </p>
+
+        <div class="showcase-grid showcase-grid--templates">
+          <!-- ① 로그인 -->
+          <article class="showcase-template" id="showcaseLogin">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">① Login</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseLogin">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface showcase-glass-surface--login">
+              <form class="login-glass" id="showcaseLoginForm" novalidate>
+                <p class="login-glass-kicker">Welcome back</p>
+                <h3 class="login-glass-title">로그인</h3>
+                <label class="sr-only" for="demo-email">이메일</label>
+                <input class="glass-field" id="demo-email" type="email" placeholder="이메일" autocomplete="off" />
+                <label class="sr-only" for="demo-pass">비밀번호</label>
+                <input class="glass-field" id="demo-pass" type="password" placeholder="비밀번호" autocomplete="off" />
+                <button type="submit" class="glass-submit">계속하기</button>
+                <p class="login-glass-note">데모 폼 · 데이터는 전송되지 않습니다.</p>
+              </form>
+            </div>
+          </article>
+
+          <!-- ② 뮤직 플레이어 -->
+          <article class="showcase-template" id="showcasePlayer">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">② Player</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcasePlayer">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface showcase-glass-surface--player" id="showcasePlayerInner">
+              <div class="player-glass">
+                <div class="player-glass-art" aria-hidden="true"></div>
+                <div class="player-glass-body">
+                  <h3 class="player-glass-track">Neon Tide</h3>
+                  <p class="player-glass-artist">Glass Lab · Session</p>
+                  <div class="player-glass-bar" aria-hidden="true">
+                    <span class="player-glass-bar-fill" id="playerBarFill"></span>
+                  </div>
+                  <div class="player-glass-times">
+                    <span id="demoTimeCur">0:42</span>
+                    <span>3:18</span>
+                  </div>
+                  <div class="player-glass-controls">
+                    <button type="button" class="player-glass-ctrl" id="demoPrevBtn" aria-label="이전">⏮</button>
+                    <button type="button" class="player-glass-ctrl player-glass-ctrl--play" id="demoPlayBtn" aria-label="재생">▶</button>
+                    <button type="button" class="player-glass-ctrl" id="demoNextBtn" aria-label="다음">⏭</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ③ 대시보드 -->
+          <article class="showcase-template" id="showcaseDashboard">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">③ Dashboard</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseDashboard">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface showcase-glass-surface--dash">
+              <div class="dash-glass">
+                <div class="dash-glass-top">
+                  <h3 class="dash-glass-title">실시간 트래픽</h3>
+                  <span class="dash-glass-live"><span class="dash-pulse"></span> LIVE</span>
+                </div>
+                <p class="dash-glass-sub">CSS 애니메이션 기반 샘플 차트</p>
+                <div class="dash-chart" role="img" aria-label="막대 그래프 데모">
+                  <div class="dash-bar" style="--h: 42%; --d: 0s;"></div>
+                  <div class="dash-bar" style="--h: 68%; --d: 0.08s;"></div>
+                  <div class="dash-bar" style="--h: 55%; --d: 0.16s;"></div>
+                  <div class="dash-bar" style="--h: 88%; --d: 0.24s;"></div>
+                  <div class="dash-bar" style="--h: 61%; --d: 0.32s;"></div>
+                  <div class="dash-bar" style="--h: 76%; --d: 0.4s;"></div>
+                  <div class="dash-bar" style="--h: 49%; --d: 0.48s;"></div>
+                </div>
+                <ul class="dash-legend">
+                  <li><span class="dash-dot"></span> 세션</li>
+                  <li><span class="dash-dot dash-dot--2"></span> 전환</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- ④ 신용카드 -->
+          <article class="showcase-template" id="showcaseCredit">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">④ Credit</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseCredit">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-credit">
+                <div class="tmpl-credit-top">
+                  <span class="tmpl-credit-chip" aria-hidden="true"></span>
+                  <span class="tmpl-credit-brand">GLASS</span>
+                </div>
+                <p class="tmpl-credit-number" aria-label="카드 번호">4521 · 8890 · 3344 · 9012</p>
+                <div class="tmpl-credit-foot">
+                  <span class="tmpl-credit-label">만료</span>
+                  <span class="tmpl-credit-exp">09 / 28</span>
+                  <span class="tmpl-credit-name">YUNA HAN</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ⑤ 날씨 -->
+          <article class="showcase-template" id="showcaseWeather">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">⑤ Weather</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseWeather">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-weather">
+                <div class="tmpl-weather-main">
+                  <span class="tmpl-weather-icon" aria-hidden="true">⛅</span>
+                  <div>
+                    <p class="tmpl-weather-temp">24°</p>
+                    <p class="tmpl-weather-city">서울 · 부분 흐림</p>
+                  </div>
+                </div>
+                <ul class="tmpl-weather-forecast">
+                  <li><span>월</span><span>22°</span></li>
+                  <li><span>화</span><span>26°</span></li>
+                  <li><span>수</span><span>23°</span></li>
+                  <li><span>목</span><span>25°</span></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- ⑥ 가격표 -->
+          <article class="showcase-template" id="showcasePricing">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">⑥ Pricing</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcasePricing">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-pricing">
+                <p class="tmpl-pricing-plan">Pro</p>
+                <p class="tmpl-pricing-price"><span class="tmpl-pricing-won">₩</span>29,000<span class="tmpl-pricing-unit">/월</span></p>
+                <ul class="tmpl-pricing-list">
+                  <li>무제한 프로젝트</li>
+                  <li>팀 협업 10명</li>
+                  <li>우선 지원</li>
+                </ul>
+                <button type="button" class="tmpl-pricing-btn" id="pricingDemoBtn">구독하기</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ⑦ 프로필 -->
+          <article class="showcase-template" id="showcaseProfile">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">⑦ Profile</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseProfile">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-profile">
+                <div class="tmpl-profile-avatar" aria-hidden="true"></div>
+                <h3 class="tmpl-profile-name">김유리</h3>
+                <p class="tmpl-profile-role">Product Designer</p>
+                <button type="button" class="tmpl-profile-follow" id="profileFollowBtn">팔로우</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ⑧ 계산기 -->
+          <article class="showcase-template" id="showcaseCalc">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">⑧ Calc</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseCalc">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-calc">
+                <output class="tmpl-calc-display" id="calcDisplay">0</output>
+                <div class="tmpl-calc-keys" id="calcKeys">
+                  <button type="button" data-calc="C">C</button>
+                  <button type="button" data-calc="⌫">⌫</button>
+                  <button type="button" data-calc="/">÷</button>
+                  <button type="button" data-calc="*">×</button>
+                  <button type="button" data-calc="7">7</button>
+                  <button type="button" data-calc="8">8</button>
+                  <button type="button" data-calc="9">9</button>
+                  <button type="button" data-calc="-">−</button>
+                  <button type="button" data-calc="4">4</button>
+                  <button type="button" data-calc="5">5</button>
+                  <button type="button" data-calc="6">6</button>
+                  <button type="button" data-calc="+">+</button>
+                  <button type="button" data-calc="1">1</button>
+                  <button type="button" data-calc="2">2</button>
+                  <button type="button" data-calc="3">3</button>
+                  <button type="button" class="tmpl-calc-eq" data-calc="=">=</button>
+                  <button type="button" class="tmpl-calc-zero" data-calc="0">0</button>
+                  <button type="button" data-calc=".">.</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ⑨ 캘린더 -->
+          <article class="showcase-template" id="showcaseCalendar">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">⑨ Calendar</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseCalendar">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-cal">
+                <div class="tmpl-cal-head">
+                  <button type="button" class="tmpl-cal-nav" id="calPrev" aria-label="이전 달">‹</button>
+                  <h3 class="tmpl-cal-title" id="calTitle">2026년 4월</h3>
+                  <button type="button" class="tmpl-cal-nav" id="calNext" aria-label="다음 달">›</button>
+                </div>
+                <div class="tmpl-cal-weekdays">
+                  <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+                </div>
+                <div class="tmpl-cal-grid" id="calGrid" aria-label="달력 날짜"></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ⑩ 채팅 -->
+          <article class="showcase-template" id="showcaseChat">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">⑩ Chat</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseChat">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-chat">
+                <div class="tmpl-chat-thread" id="chatThread">
+                  <div class="tmpl-chat-bubble tmpl-chat-bubble--them"><span>오늘 미팅 3시 맞죠?</span></div>
+                  <div class="tmpl-chat-bubble tmpl-chat-bubble--me"><span>네, 링크 방금 보냈어요!</span></div>
+                  <div class="tmpl-chat-bubble tmpl-chat-bubble--them"><span>확인했습니다 👍</span></div>
+                </div>
+                <form class="tmpl-chat-form" id="chatDemoForm" novalidate>
+                  <input class="tmpl-chat-input glass-field" type="text" id="chatInput" placeholder="메시지 입력…" autocomplete="off" />
+                  <button type="submit" class="tmpl-chat-send">전송</button>
+                </form>
+              </div>
+            </div>
+          </article>
+
+          <!-- ⑪ 상품 -->
+          <article class="showcase-template" id="showcaseProduct">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">⑪ Product</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseProduct">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-product">
+                <div class="tmpl-product-img" aria-hidden="true"></div>
+                <div class="tmpl-product-body">
+                  <h3 class="tmpl-product-name">Aero Glass 헤드폰</h3>
+                  <p class="tmpl-product-stars" aria-label="별점 4.5">★★★★<span class="tmpl-product-half">★</span></p>
+                  <p class="tmpl-product-price">₩189,000</p>
+                  <button type="button" class="tmpl-product-cart" id="productCartBtn">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ⑫ 설정 토글 -->
+          <article class="showcase-template" id="showcaseSettings">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">⑫ Settings</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseSettings">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-settings">
+                <div class="tmpl-settings-row">
+                  <span class="tmpl-settings-label">푸시 알림</span>
+                  <button type="button" class="glass-switch" role="switch" aria-checked="true" data-switch="push"></button>
+                </div>
+                <div class="tmpl-settings-row">
+                  <span class="tmpl-settings-label">다크 모드</span>
+                  <button type="button" class="glass-switch" role="switch" aria-checked="false" data-switch="dark"></button>
+                </div>
+                <div class="tmpl-settings-row">
+                  <span class="tmpl-settings-label">사운드 효과</span>
+                  <button type="button" class="glass-switch" role="switch" aria-checked="true" data-switch="sound"></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ⑬ 칸반 태스크 -->
+          <article class="showcase-template" id="showcaseKanban">
+            <div class="showcase-template-head">
+              <span class="showcase-badge">⑬ Task</span>
+              <button type="button" class="showcase-apply-btn" data-apply-generator="showcaseKanban">현재 내 설정 적용하기</button>
+            </div>
+            <div class="showcase-glass-surface">
+              <div class="tmpl-kanban">
+                <h3 class="tmpl-kanban-title">대시보드 리뉴얼</h3>
+                <div class="tmpl-kanban-tags">
+                  <span class="tmpl-tag tmpl-tag--v">Design</span>
+                  <span class="tmpl-tag tmpl-tag--b">Q2</span>
+                </div>
+                <div class="tmpl-kanban-progress-wrap">
+                  <div class="tmpl-kanban-progress"><span style="width: 68%;"></span></div>
+                  <span class="tmpl-kanban-pct">68%</span>
+                </div>
+                <p class="tmpl-kanban-due">마감 · 4월 18일</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 가이드 -->
+      <section
+        class="view-section view-section--guide"
+        data-view="guide"
+        aria-labelledby="guide-title"
+      >
+        <h2 id="guide-title" class="section-heading">가이드 &amp; 레퍼런스</h2>
+        <p class="section-lead">디자인 팁 · 브라우저 폴백 · 성능까지, 실무에 바로 쓰는 체크리스트입니다.</p>
+
+        <div class="guide-stack">
+          <article class="guide-card glass-surface">
+            <h3 class="guide-card-title"><span class="guide-emoji" aria-hidden="true">🎨</span> Design Tips — 대비(Contrast)로 가독성 끌어올리기</h3>
+            <ul class="guide-list">
+              <li><strong>배경과의 단계 두기</strong> · 글래스 뒤가 너무 바쁘면 텍스트 WCAG 대비가 무너집니다. 히어로 배경은 블러/그라데이션/딤(dark overlay)으로 <em>복잡도를 한 단계 낮추세요.</em></li>
+              <li><strong>틴트 + 알파 조합</strong> · 같은 투명도라도 <code>rgba</code>의 RGB 틴트를 배경 보색 쪽으로 살짝 기울이면 윤곽이 선명해집니다.</li>
+              <li><strong>테두리·인셋 하이라이트</strong> · 1px 라이트 보더와 <code>inset</code> 상단 하이라이트가 “판 유리” 입체감을 주어 글자 주변을 자연스럽게 구분합니다.</li>
+              <li><strong>타이포 스케일</strong> · 글래스 카드 안 본문은 <code>font-weight: 500~600</code>, 제목은 한 단 굵게 올려 시선 흐름을 고정하세요.</li>
+            </ul>
+          </article>
+
+          <article class="guide-card glass-surface">
+            <h3 class="guide-card-title"><span class="guide-emoji" aria-hidden="true">🌐</span> Browser Support — <code>backdrop-filter</code> 폴백</h3>
+            <p class="guide-p">모던 브라우저는 대부분 지원하지만, 구형·일부 WebView에서는 블러가 무시될 수 있습니다.</p>
+            <ul class="guide-list">
+              <li><strong><code>@supports</code> 가드</strong> · <code>@supports (backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))</code> 안에서만 블러·투명 레이어를 풀고, <code>else</code>에서는 단색 <code>rgba</code> 배경만 사용합니다.</li>
+              <li><strong>webkit 접두사</strong> · Safari 호환을 위해 <code>-webkit-backdrop-filter</code>를 항상 함께 선언하세요.</li>
+              <li><strong>정적 이미지 대체</strong> · 완전 미지원 시 미리 흐린 배경 PNG/WebP를 깔고 그 위에 반투명 패널을 올리는 방식이 안전합니다.</li>
+            </ul>
+            <div class="guide-code-block">
+              <pre><code>@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-card {
+    backdrop-filter: none;
+    background: rgba(15, 23, 42, 0.92);
+  }
+}</code></pre>
+            </div>
+          </article>
+
+          <article class="guide-card glass-surface">
+            <h3 class="guide-card-title"><span class="guide-emoji" aria-hidden="true">⚡</span> Optimization — GPU 부하 줄이기</h3>
+            <ul class="guide-list">
+              <li><strong>블러 반경</strong> · 큰 영역에 <code>blur(40px)</code> 이상을 남발하면 합성 비용이 커집니다. 카드 단위로 쪼개고 값은 8–24px 대역에서 튜닝하세요.</li>
+              <li><strong>중첩 최소화</strong> · 블러 위에 블러를 겹치면 비용이 기하급수적으로 늘 수 있습니다. 한 겹의 글래스 + 그림자로 마무리하는 편이 좋습니다.</li>
+              <li><strong>애니메이션 분리</strong> · <code>transform</code>·<code>opacity</code>만 GPU 친화적입니다. <code>backdrop-filter</code> 자체를 매 프레임 바꾸지 마세요.</li>
+              <li><strong>모바일 프리셋</strong> · 터치 기기에서는 블러 한 단계 낮춘 프리셋을 따로 두거나, <code>prefers-reduced-transparency</code> 미디어쿼리로 단색 폴백을 제공하세요.</li>
+            </ul>
+          </article>
+
+          <div class="guide-panel glass-surface guide-panel--table">
+            <h3 class="guide-table-title">속성 치트시트</h3>
+            <div class="guide-table-wrap">
+              <table class="guide-table">
+                <thead>
+                  <tr>
+                    <th scope="col">속성</th>
+                    <th scope="col">역할</th>
+                    <th scope="col">지원</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>backdrop-filter</code></th>
+                    <td>뒤 픽셀에 블러·채도 등 필터 → 유리 질감의 핵심</td>
+                    <td class="support-ok">Chrome 76+ · FF 103+ · Safari 9+¹ · Edge 79+</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>rgba()</code></th>
+                    <td>반투명 틴트·테두리·그림자 표현</td>
+                    <td class="support-ok">모던 전 브라우저</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="guide-footnote">¹ Safari는 <code>-webkit-backdrop-filter</code> 병행 권장.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-backdrop" aria-hidden="true"></span>
+    <span class="toast-shine" aria-hidden="true"></span>
+    <span class="toast-icon" aria-hidden="true">✓</span>
+    <span class="toast-text" id="toastText">Copied!</span>
+  </div>
+
+  <script src="assets/js/presets-data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
