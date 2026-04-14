@@ -1,0 +1,126 @@
+/**
+ * 공통 스타일 가이드 — 디자인 토큰
+ * 다크: 기본(:root) · 라이트: html[data-theme="light"]
+ */
+
+:root {
+  /* 배경 그라데이션 조각 */
+  --bg-blob-1: rgba(124, 158, 255, 0.18);
+  --bg-blob-2: rgba(94, 234, 212, 0.08);
+  --bg-blob-3: rgba(251, 113, 133, 0.06);
+
+  /* 색상 — 다크 글래스 UI */
+  --color-bg-deep: #0a0e17;
+  --color-bg-mid: #121a2b;
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --color-surface-hover: rgba(255, 255, 255, 0.1);
+  --color-border-subtle: rgba(255, 255, 255, 0.12);
+  --color-border-strong: rgba(255, 255, 255, 0.22);
+  --color-text-primary: #f0f4fc;
+  --color-text-secondary: rgba(240, 244, 252, 0.72);
+  --color-text-muted: rgba(240, 244, 252, 0.48);
+  --color-accent: #7c9eff;
+  --color-accent-soft: rgba(124, 158, 255, 0.35);
+  --color-success: #5eead4;
+  --color-danger: #fb7185;
+  --color-on-accent: #0a0e17;
+  --color-input-bg: rgba(0, 0, 0, 0.25);
+  --color-code-bg: rgba(0, 0, 0, 0.35);
+  --color-code-bar: rgba(0, 0, 0, 0.2);
+  --preview-label-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+
+  /* 생성기 → 쇼케이스 실시간 연동 (index.js가 갱신) */
+  --live-glass-blur: 16px;
+  --live-glass-opacity: 0.2;
+  --live-glass-r: 255;
+  --live-glass-g: 255;
+  --live-glass-b: 255;
+  --live-glass-border-w: 1px;
+  --live-glass-radius: 20px;
+  --live-glass-shadow-y: 24px;
+  --live-glass-shadow-spread: 48px;
+
+  --header-bg: rgba(10, 14, 23, 0.65);
+  --header-nav-mobile-bg: rgba(10, 14, 23, 0.92);
+
+  /* 타이포그래피 */
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem);
+  --text-sm: clamp(0.8125rem, 0.78rem + 0.2vw, 0.875rem);
+  --text-base: clamp(0.9375rem, 0.9rem + 0.25vw, 1rem);
+  --text-lg: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.375rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 0.85vw, 1.75rem);
+  --text-3xl: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+  --leading-tight: 1.25;
+  --leading-normal: 1.55;
+  --tracking-tight: -0.02em;
+
+  /* 간격 (4px 그리드) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* 반경 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* 그림자 */
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-inner-glow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-preset-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+
+  /* 전환 */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 220ms;
+
+  /* 레이아웃 */
+  --header-height: 64px;
+  --content-max: 1200px;
+  --safe-inline: max(1.25rem, env(safe-area-inset-left, 0px));
+}
+
+html[data-theme="light"] {
+  --bg-blob-1: rgba(79, 110, 217, 0.2);
+  --bg-blob-2: rgba(20, 184, 166, 0.12);
+  --bg-blob-3: rgba(244, 114, 182, 0.1);
+
+  --color-bg-deep: #e8edf7;
+  --color-bg-mid: #dce4f2;
+  --color-surface: rgba(255, 255, 255, 0.55);
+  --color-surface-hover: rgba(255, 255, 255, 0.78);
+  --color-border-subtle: rgba(15, 23, 42, 0.1);
+  --color-border-strong: rgba(15, 23, 42, 0.18);
+  --color-text-primary: #0f172a;
+  --color-text-secondary: rgba(15, 23, 42, 0.68);
+  --color-text-muted: rgba(15, 23, 42, 0.45);
+  --color-accent: #4f6ed9;
+  --color-accent-soft: rgba(79, 110, 217, 0.22);
+  --color-success: #0d9488;
+  --color-danger: #e11d48;
+  --color-on-accent: #f8fafc;
+  --color-input-bg: rgba(255, 255, 255, 0.85);
+  --color-code-bg: rgba(15, 23, 42, 0.06);
+  --color-code-bar: rgba(15, 23, 42, 0.04);
+  --preview-label-shadow: 0 1px 3px rgba(15, 23, 42, 0.15);
+
+  --header-bg: rgba(255, 255, 255, 0.72);
+  --header-nav-mobile-bg: rgba(248, 250, 252, 0.94);
+
+  --shadow-glass: 0 8px 32px rgba(15, 23, 42, 0.12);
+  --shadow-inner-glow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --shadow-preset-hover: 0 12px 36px rgba(15, 23, 42, 0.15);
+}
