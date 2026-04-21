@@ -447,10 +447,7 @@
 
       function play() {
         if (!target) return;
-        // restart animation by toggling class and forcing reflow
-        target.classList.remove("anim-target");
-        // eslint-disable-next-line no-unused-expressions
-        target.offsetHeight;
+        readControls();
         var inline = document.getElementById("an-inline-keyframes");
         if (!inline) {
           inline = document.createElement("style");
@@ -458,6 +455,11 @@
           document.head.appendChild(inline);
         }
         inline.textContent = keyframesCss(st);
+        /* 동일한 shorthand면 재생이 안 되므로 끊었다가 다시 건다 */
+        target.style.animation = "none";
+        void target.offsetHeight;
+        target.style.removeProperty("animation");
+        void target.offsetHeight;
         target.style.animation = animationShorthand(st);
       }
 
@@ -579,6 +581,8 @@
         try {
           ac.abort();
         } catch (e) {}
+        var inline = document.getElementById("an-inline-keyframes");
+        if (inline && inline.parentNode) inline.parentNode.removeChild(inline);
         container.innerHTML = "";
       };
     },
