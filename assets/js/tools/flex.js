@@ -109,8 +109,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="플렉스박스 빌더">' +
-      '<header class="page-hero">' +
-      "<h1>플렉스박스 빌더</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>플렉스박스 빌더</h2>" +
       "<p>flex 컨테이너 설정을 미리보고, CSS를 복사하거나 프리셋으로 저장하세요.</p>" +
       "</header>" +
       '<div class="generator">' +

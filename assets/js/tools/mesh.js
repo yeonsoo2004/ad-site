@@ -99,8 +99,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="메쉬 그라디언트">' +
-      '<header class="page-hero">' +
-      "<h1>메쉬 그라디언트</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>메쉬 그라디언트</h2>" +
       "<p>여러 개의 radial-gradient 레이어로 메쉬 느낌을 만들고, CSS를 복사하거나 프리셋으로 저장하세요.</p>" +
       "</header>" +
       '<div class="generator">' +

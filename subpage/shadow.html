@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="섀도우 프리셋 — CSS Utility Hub 도구" />
+    <title>섀도우 프리셋 — CSS Utility Hub</title>
+
+    <!-- ================== 기본 메타 태그 (SEO) ================== -->
+    <meta name="title" content="섀도우 프리셋 — CSS Utility Hub" />
+    <meta
+      name="description"
+      content="UI 컴포넌트에 어울리는 box-shadow 프리셋을 생성하고 블러/스프레드/오프셋/색상을 조절해 미리보기로 확인한 뒤 CSS를 복사하는 섀도우 도구."
+    />
+    <meta
+      name="keywords"
+      content="box-shadow, CSS shadow, shadow preset, inset shadow, UI 그림자, 카드 그림자, 버튼 그림자, 섀도우 생성기"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
+    <meta property="og:title" content="섀도우 프리셋 — CSS Utility Hub" />
+    <meta
+      property="og:description"
+      content="box-shadow 프리셋을 만들고 미리보기로 확인한 뒤 CSS를 바로 복사하세요. inset/외곽 그림자 지원."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="subpage/shadow.html" />
+    <meta property="og:image" content="assets/images/icon/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="CSS Utility Hub" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="섀도우 프리셋 — CSS Utility Hub" />
+    <meta
+      name="twitter:description"
+      content="CSS 섀도우( box-shadow ) 프리셋 생성기. inset/외곽 그림자를 만들고 결과 CSS를 복사하세요."
+    />
+    <meta name="twitter:image" content="assets/images/icon/favicon.png" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
+    <meta name="language" content="ko" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="subpage/shadow.html" />
+
+    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <link rel="icon" href="../assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/icon/favicon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/hub.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      window.__HUB_PAGE__ = { tool: "shadow" };
+    </script>
+  </head>
+  <body>
+    <div id="hub-root">
+      <div class="seo-wrap">
+        <article class="seo-doc" aria-label="섀도우 프리셋 도구 설명 문서">
+          <h1>섀도우 프리셋: CSS box-shadow로 레이어와 깊이를 설계하는 실전 가이드</h1>
+          <p>
+            섀도우(box-shadow)는 UI 요소의 “깊이”를 만드는 가장 강력한 도구입니다. 같은 배경 위에서도 카드,
+            버튼, 입력창이 서로 다른 레이어로 인식되는 이유는 대개 섀도우의 질감과 강도 차이 때문입니다. 이
+            페이지의 섀도우 프리셋은 여러 레이어를 조합해 자연스러운 그림자를 만들고, 결과 CSS를 바로 복사하거나
+            프리셋으로 저장할 수 있도록 돕습니다. 섀도우는 과하면 촌스럽고, 약하면 평면적이기 때문에 “규칙”과
+            “일관성”이 특히 중요합니다.
+          </p>
+
+          <nav class="seo-toc" aria-label="문서 목차">
+            <div class="seo-toc__title">목차</div>
+            <ol>
+              <li><a href="#seo-shadow-why">섀도우가 중요한 이유</a></li>
+              <li><a href="#seo-components">섀도우를 쓰는 컴포넌트 유형</a></li>
+              <li><a href="#seo-howto">생성기 사용 방법(권장 흐름)</a></li>
+              <li><a href="#seo-layers">다중 레이어 섀도우 설계(규칙)</a></li>
+              <li><a href="#seo-theme">다크/라이트 테마에서의 섀도우</a></li>
+              <li><a href="#seo-faq">자주 묻는 질문(FAQ)</a></li>
+            </ol>
+          </nav>
+
+          <section id="seo-shadow-why" aria-label="섀도우의 역할">
+            <h2>섀도우가 중요한 이유</h2>
+            <p>
+              섀도우는 단순히 “그림자”가 아니라, UI의 정보 구조를 시각적으로 설명합니다. 같은 컨텐츠라도 섀도우가
+              잘 잡혀 있으면 클릭 가능한 영역이 명확해지고, 섹션의 경계가 자연스럽게 드러납니다. 반대로 섀도우가
+              일관되지 않으면 화면이 어수선해 보이고, 요소가 떠 있는지 붙어 있는지 판단하기 어려워집니다.
+            </p>
+            <ul>
+              <li><strong>레이어 분리</strong>: 카드/모달/드롭다운 같은 떠 있는 요소를 배경과 분리합니다.</li>
+              <li><strong>상태 표현</strong>: hover/active에서 섀도우 변화로 인터랙션을 전달합니다.</li>
+              <li><strong>브랜드 톤</strong>: 섀도우의 부드러움/강도로 제품의 “촉감”이 결정됩니다.</li>
+              <li><strong>가독성</strong>: 테두리가 약한 디자인에서도 요소를 구분해 줍니다.</li>
+            </ul>
+            <div class="seo-note">
+              <p>
+                추천: 섀도우는 “많이”보다 “잘”이 중요합니다. 몇 개의 단계(예: sm/md/lg/xl)만 만들고, 프로젝트 전반에서
+                반복 사용하면 가장 빠르게 완성도가 올라갑니다.
+              </p>
+            </div>
+          </section>
+
+          <section id="seo-components" aria-label="컴포넌트 유형">
+            <h2>섀도우를 쓰는 컴포넌트 유형</h2>
+            <p>
+              섀도우는 모든 요소에 적용하는 것이 아니라, 레이어가 필요하거나 인터랙션이 중요한 요소에 선택적으로
+              적용하는 편이 좋습니다. 아래와 같은 경우에 특히 효과가 큽니다.
+            </p>
+            <ul>
+              <li><strong>카드/패널</strong>: 섹션을 묶는 컨테이너, 대시보드 위젯</li>
+              <li><strong>모달/드로어</strong>: 배경과 확실히 분리되어야 하는 레이어</li>
+              <li><strong>드롭다운/툴팁</strong>: 작은 레이어이지만 떠 있는 느낌이 필요</li>
+              <li><strong>버튼</strong>: hover/pressed 상태를 섀도우로 표현</li>
+            </ul>
+            <p>
+              경계가 필요한 경우 섀도우만으로 부족할 수 있습니다. 이때는 <a href="./border.html">보더/라디우스</a> 규칙과 함께
+              섞어 쓰면 더 안정적인 UI가 됩니다.
+            </p>
+          </section>
+
+          <section id="seo-howto" aria-label="사용 방법">
+            <h2>생성기 사용 방법(권장 흐름)</h2>
+            <ol>
+              <li><strong>레이어 수</strong>: 1~3 레이어로 시작합니다(대부분 2 레이어면 충분).</li>
+              <li><strong>큰 그림자</strong>: 멀리 퍼지는 부드러운 그림자로 “공기감”을 만듭니다.</li>
+              <li><strong>작은 그림자</strong>: 가까운 얕은 그림자로 “접지” 느낌을 만듭니다.</li>
+              <li><strong>투명도</strong>: 너무 진하면 더러워 보일 수 있어 낮은 알파로 여러 번 쌓습니다.</li>
+              <li><strong>미리보기 검증</strong>: 실제 배경색과 유사한 환경에서 확인합니다.</li>
+              <li><strong>복사/저장</strong>: 결과 CSS를 복사하고 프리셋으로 저장합니다.</li>
+            </ol>
+            <p>
+              섀도우를 적용할 컨테이너 폭과 간격이 일정하면 더 좋은 결과가 나옵니다. 레이아웃은
+              <a href="./container.html">컨테이너</a>, 간격은 <a href="./spacing.html">스페이싱</a>으로 같이 정리해 보세요.
+            </p>
+          </section>
+
+          <section id="seo-layers" aria-label="레이어 설계">
+            <h2>다중 레이어 섀도우 설계(규칙)</h2>
+            <p>
+              좋은 섀도우는 “한 덩어리”가 아니라 “여러 층”입니다. 하나의 큰 그림자는 자연스럽지 않을 수 있어,
+              얕은 그림자 + 중간 그림자 + 넓은 그림자를 조합하면 훨씬 현실적인 느낌이 납니다.
+            </p>
+            <ul>
+              <li><strong>근접 레이어</strong>: 작은 blur, 작은 spread로 가장자리 접지를 만듭니다.</li>
+              <li><strong>중간 레이어</strong>: y-offset과 blur를 올려 부드러운 떠 있음 느낌을 줍니다.</li>
+              <li><strong>원거리 레이어</strong>: 큰 blur로 배경과 자연스럽게 섞이게 합니다.</li>
+              <li><strong>색</strong>: 완전한 검정 대신 약간의 색을 섞으면 더 고급스럽습니다(특히 다크 테마).</li>
+            </ul>
+            <p>
+              섀도우는 색 대비에도 영향을 줍니다. 얕은 보더를 함께 쓰면 경계가 더 또렷해지고, 섀도우를 과하게 올리지 않아도 됩니다.
+            </p>
+          </section>
+
+          <section id="seo-theme" aria-label="테마별 섀도우">
+            <h2>다크/라이트 테마에서의 섀도우</h2>
+            <p>
+              다크 테마에서는 섀도우가 잘 보이지만, 과하면 탁해질 수 있습니다. 라이트 테마에서는 섀도우가 흐려지기 쉬워,
+              보더와 함께 사용하거나 색을 살짝 진하게 조정하는 것이 좋습니다. 따라서 테마별로 섀도우 토큰을 따로 두는 팀도 많습니다.
+            </p>
+            <ul>
+              <li><strong>다크</strong>: 낮은 알파로 여러 레이어, 과도한 spread는 피하기</li>
+              <li><strong>라이트</strong>: 보더 병행, 섀도우 색을 너무 회색으로 만들지 않기</li>
+              <li><strong>일관성</strong>: 버튼/카드/모달의 섀도우 단계가 논리적으로 이어지게 구성</li>
+            </ul>
+          </section>
+
+          <section id="seo-faq" aria-label="자주 묻는 질문">
+            <h2>자주 묻는 질문(FAQ)</h2>
+            <ul>
+              <li><strong>Q. 섀도우가 더럽게 보여요.</strong> A. 한 레이어를 진하게 쓰면 탁해지기 쉽습니다. 알파를 낮추고 레이어를 2~3개로 나누어 쌓아 보세요.</li>
+              <li><strong>Q. 라이트 모드에서 섀도우가 안 보여요.</strong> A. 보더를 함께 쓰거나 섀도우 색을 조금 더 진하게 조정하는 것이 좋습니다.</li>
+              <li><strong>Q. hover/active는 어떻게 처리하나요?</strong> A. hover에서는 약간 더 떠 보이게(y-offset/blur 증가), active에서는 살짝 눌리는 느낌(y-offset/blur 감소)으로 규칙을 정하면 일관성이 생깁니다.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "메인", "item": "../index.html" },
+          { "@type": "ListItem", "position": 2, "name": "섀도우 프리셋", "item": "./shadow.html" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "섀도우가 더럽게 보여요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "한 레이어를 진하게 쓰면 탁해지기 쉽습니다. 알파를 낮추고 레이어를 2~3개로 나누어 쌓아 보세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "라이트 모드에서 섀도우가 안 보여요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "보더를 함께 쓰거나 섀도우 색을 조금 더 진하게 조정하는 것이 좋습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "hover/active는 어떻게 처리하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "hover에서는 약간 더 떠 보이게, active에서는 살짝 눌리는 느낌이 나도록 y-offset/blur를 조절하는 규칙을 두면 일관성이 생깁니다."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script src="../assets/js/hub.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/tools/shadow.js" defer></script>
+    <script src="../assets/js/tools/coming-soon.js" defer></script>
+    <script src="../assets/js/hub-layout.js" defer></script>
+    <script src="../assets/js/hub-bootstrap.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>

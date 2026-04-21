@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="메쉬 그라디언트 — CSS Utility Hub 도구" />
+    <title>메쉬 그라디언트 — CSS Utility Hub</title>
+
+    <!-- ================== 기본 메타 태그 (SEO) ================== -->
+    <meta name="title" content="메쉬 그라디언트 — CSS Utility Hub" />
+    <meta
+      name="description"
+      content="메쉬(다점) 그라디언트를 손쉽게 생성하고 색/포인트/블렌딩을 조절해 배경 디자인을 완성한 뒤 CSS를 복사하는 메쉬 그라디언트 도구."
+    />
+    <meta
+      name="keywords"
+      content="mesh gradient, CSS background, 그라디언트 배경, 배경 디자인, 컬러 포인트, 블렌딩, 메쉬 그라데이션 생성기"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
+    <meta property="og:title" content="메쉬 그라디언트 — CSS Utility Hub" />
+    <meta
+      property="og:description"
+      content="메쉬(다점) 그라디언트 배경을 만들고 포인트/색상 조절 후 CSS를 복사하세요."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="subpage/mesh.html" />
+    <meta property="og:image" content="assets/images/icon/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="CSS Utility Hub" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="메쉬 그라디언트 — CSS Utility Hub" />
+    <meta
+      name="twitter:description"
+      content="메쉬 그라디언트 생성기. 포인트/색상 조절로 배경을 만들고 결과 CSS를 복사하세요."
+    />
+    <meta name="twitter:image" content="assets/images/icon/favicon.png" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
+    <meta name="language" content="ko" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="subpage/mesh.html" />
+
+    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <link rel="icon" href="../assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/icon/favicon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/hub.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      window.__HUB_PAGE__ = { tool: "mesh" };
+    </script>
+  </head>
+  <body>
+    <div id="hub-root">
+      <div class="seo-wrap">
+        <article class="seo-doc" aria-label="메쉬 그라디언트 도구 설명 문서">
+          <h1>메쉬 그라디언트 생성기: radial-gradient 레이어로 현대적인 배경을 만드는 방법</h1>
+          <p>
+            메쉬 그라디언트(mesh gradient)는 여러 색이 부드럽게 섞이며 “빛 덩어리”가 떠다니는 듯한 배경을
+            만드는 표현 방식입니다. 디자인 툴에서 흔히 보이는 메쉬 배경을 CSS로 구현할 때는 보통
+            <strong>radial-gradient</strong>를 여러 겹 쌓아 레이어링합니다. 이 페이지의 생성기는 각 레이어의
+            색, 위치, 크기, 블렌딩 느낌을 조절해 즉시 미리보기로 확인하고 CSS를 복사할 수 있게 도와줍니다.
+          </p>
+
+          <nav class="seo-toc" aria-label="문서 목차">
+            <div class="seo-toc__title">목차</div>
+            <ol>
+              <li><a href="#seo-mesh-what">메쉬 그라디언트란 무엇인가</a></li>
+              <li><a href="#seo-howto">생성기 사용 방법(권장 흐름)</a></li>
+              <li><a href="#seo-layers">레이어 설계: 색/위치/크기 규칙</a></li>
+              <li><a href="#seo-usage">실전 적용: 섹션 배경·카드 배경·히어로</a></li>
+              <li><a href="#seo-performance">성능/밴딩/호환성 체크</a></li>
+              <li><a href="#seo-faq">자주 묻는 질문(FAQ)</a></li>
+            </ol>
+          </nav>
+
+          <section id="seo-mesh-what" aria-label="개요">
+            <h2>메쉬 그라디언트란 무엇인가</h2>
+            <p>
+              메쉬 그라디언트는 2~5개 이상의 색을 “면”으로 섞어 깊이를 만드는 배경입니다. 일반적인 linear
+              그라디언트가 한 방향의 색 변화라면, 메쉬는 여러 지점에서 빛이 번지는 느낌을 만들 수 있어 훨씬
+              현대적인 인상을 줍니다. 특히 다크 UI에서 배경을 단조롭지 않게 만들면서도 과하지 않게 분위기를
+              조절할 수 있습니다.
+            </p>
+            <ul>
+              <li><strong>장점</strong>: 히어로 섹션, 제품 배경, 카드 헤더 등에서 강한 인상을 줍니다.</li>
+              <li><strong>주의</strong>: 텍스트 가독성을 해치지 않도록 오버레이/대비 설계가 필요합니다.</li>
+              <li><strong>재사용</strong>: 좋은 조합은 프리셋으로 저장해 반복 적용합니다.</li>
+              <li><strong>연계</strong>: 단순 그라디언트는 <a href="./gradient.html">그라디언트 메이커</a>로 빠르게 만들 수 있습니다.</li>
+            </ul>
+            <div class="seo-note">
+              <p>
+                추천: 메쉬 배경 위에는 글래스 패널이 특히 잘 어울립니다. <a href="./glass.html">글래스</a> 도구로
+                반투명 레이어를 얹으면 텍스트 가독성과 레이어감이 동시에 좋아집니다.
+              </p>
+            </div>
+          </section>
+
+          <section id="seo-howto" aria-label="사용 방법">
+            <h2>생성기 사용 방법(권장 흐름)</h2>
+            <ol>
+              <li><strong>레이어 수</strong>: 3개로 시작해 필요하면 4~5개로 늘립니다.</li>
+              <li><strong>색 선정</strong>: 메인/보조/포인트 색을 정하고 채도/명도 차이를 줍니다.</li>
+              <li><strong>위치 배치</strong>: 화면 모서리/중심을 적절히 분산시켜 균형을 잡습니다.</li>
+              <li><strong>크기 조절</strong>: 너무 작으면 잡티처럼, 너무 크면 단조롭게 보일 수 있습니다.</li>
+              <li><strong>미리보기 검증</strong>: 텍스트가 올라갈 경우 대비를 점검합니다.</li>
+              <li><strong>복사/저장</strong>: CSS를 복사하고, 좋은 배경은 프리셋으로 저장합니다.</li>
+            </ol>
+            <p>
+              메쉬는 “색”보다 “배치”가 더 중요할 때가 많습니다. 같은 색이라도 위치를 조금만 바꾸면 분위기가 크게
+              달라집니다. 따라서 색을 자주 바꾸기보다 위치/크기부터 조정하는 접근을 권장합니다.
+            </p>
+          </section>
+
+          <section id="seo-layers" aria-label="레이어 설계">
+            <h2>레이어 설계: 색/위치/크기 규칙</h2>
+            <p>
+              레이어를 설계할 때는 “주인공 레이어”와 “보조 레이어”를 구분하면 안정적입니다. 주인공 레이어는
+              브랜드 색 또는 포인트 색으로 존재감을 만들고, 보조 레이어는 배경 톤을 연결해 밴딩을 줄여줍니다.
+            </p>
+            <ul>
+              <li><strong>색</strong>: 인접한 톤끼리 연결되게 구성하면 자연스럽습니다.</li>
+              <li><strong>위치</strong>: 한쪽에 몰리지 않게 삼각형 형태로 분산하면 균형이 좋습니다.</li>
+              <li><strong>크기</strong>: 2~3단계 크기를 섞어 깊이를 만듭니다.</li>
+              <li><strong>투명도</strong>: 겹침이 많을수록 투명도를 낮춰 탁해지는 것을 방지합니다.</li>
+            </ul>
+            <p>
+              팔레트를 빠르게 확보하려면 <a href="./palette.html">팔레트 생성기</a>로 스케일을 만든 뒤, 300~700 사이의
+              색을 섞어 사용하면 톤이 잘 맞습니다.
+            </p>
+          </section>
+
+          <section id="seo-usage" aria-label="실전 적용">
+            <h2>실전 적용: 섹션 배경·카드 배경·히어로</h2>
+            <h3>1) 히어로 섹션 배경</h3>
+            <ul>
+              <li><strong>추천</strong>: 레이어 4~5개 + 약한 오버레이</li>
+              <li><strong>포인트</strong>: CTA 텍스트가 놓이는 영역은 상대적으로 밝기/복잡도를 낮춥니다.</li>
+            </ul>
+            <h3>2) 카드/패널 배경</h3>
+            <ul>
+              <li><strong>추천</strong>: 레이어 2~3개로 절제, 경계는 보더/섀도우로 보강</li>
+              <li><strong>연계</strong>: <a href="./border.html">보더/라디우스</a>, <a href="./shadow.html">섀도우</a>와 같이 쓰면 품질이 올라갑니다.</li>
+            </ul>
+            <h3>3) 전체 페이지 배경</h3>
+            <ul>
+              <li><strong>추천</strong>: 메쉬 강도를 낮추고, 섹션 패널로 정보 계층을 분리</li>
+              <li><strong>가독성</strong>: 중요한 텍스트는 <a href="./contrast.html">대비 체크</a>로 검증합니다.</li>
+            </ul>
+            <p>
+              메쉬는 “많이 넣을수록” 화려해지지만, 제품 UI에서는 과하면 피로도가 올라갑니다. 따라서 1) 히어로, 2) 주요 섹션,
+              3) 배경 포인트 중 하나만 선택해 집중하는 편이 보통 더 세련됩니다.
+            </p>
+          </section>
+
+          <section id="seo-performance" aria-label="성능과 호환성">
+            <h2>성능/밴딩/호환성 체크</h2>
+            <p>
+              radial-gradient 레이어가 많아질수록 렌더링 비용이 증가할 수 있습니다. 또한 큰 면적에서 명도 변화가
+              부드러울수록 밴딩(banding)이 보일 수 있습니다. 아래 체크리스트를 참고해 최종 품질을 다듬어 보세요.
+            </p>
+            <ul>
+              <li><strong>레이어 수 제한</strong>: 3~5개 정도로 제한하면 대부분 충분합니다.</li>
+              <li><strong>밴딩 완화</strong>: 중간 톤을 추가하거나, 약한 노이즈/패턴을 얹어 완화합니다.</li>
+              <li><strong>텍스트 대비</strong>: 가장 밝은/어두운 영역에서 가독성이 무너지지 않는지 확인합니다.</li>
+              <li><strong>모바일 검증</strong>: 저사양 기기에서 스크롤/전환 시 버벅임이 없는지 확인합니다.</li>
+            </ul>
+          </section>
+
+          <section id="seo-faq" aria-label="자주 묻는 질문">
+            <h2>자주 묻는 질문(FAQ)</h2>
+            <ul>
+              <li><strong>Q. 메쉬가 탁해 보여요.</strong> A. 레이어가 겹치는 구간이 많거나 투명도가 높을 수 있습니다. 레이어 수를 줄이고, 보조 레이어의 채도/명도를 낮춰 보세요.</li>
+              <li><strong>Q. 밴딩이 생겨요.</strong> A. 스탑이 적거나 명도 변화가 큰 경우입니다. 중간 톤을 추가하거나 약한 노이즈를 얹는 방법이 효과적입니다.</li>
+              <li><strong>Q. 텍스트가 안 읽혀요.</strong> A. 오버레이 또는 글래스 패널로 텍스트 영역을 분리하고, 대비 체크로 주요 구간을 검증하세요.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "메인", "item": "../index.html" },
+          { "@type": "ListItem", "position": 2, "name": "메쉬 그라디언트", "item": "./mesh.html" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "메쉬가 탁해 보여요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "레이어가 겹치는 구간이 많거나 투명도가 높을 수 있습니다. 레이어 수를 줄이고 보조 레이어의 채도/명도를 낮춰 보세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "밴딩이 생겨요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "명도 변화가 큰 경우입니다. 중간 톤을 추가하거나 약한 노이즈를 얹는 방법이 효과적입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "텍스트가 안 읽혀요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "오버레이 또는 글래스 패널로 텍스트 영역을 분리하고, 대비 체크로 주요 구간을 검증하세요."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script src="../assets/js/hub.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/tools/mesh.js" defer></script>
+    <script src="../assets/js/tools/coming-soon.js" defer></script>
+    <script src="../assets/js/hub-layout.js" defer></script>
+    <script src="../assets/js/hub-bootstrap.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>

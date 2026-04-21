@@ -1,7 +1,18 @@
 /* hub — sidebar + main layout (SPA shell) */
 
-.hub-shell {
+#hub-root {
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  margin-top: auto;
+}
+
+.hub-shell {
+  flex: 1 0 auto;
+  min-height: 0;
   display: grid;
   grid-template-columns: 260px 1fr;
   background: var(--color-bg);
@@ -114,6 +125,17 @@ html[data-theme="light"] .hub-sidebar::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
+.hub-brand {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hub-brand:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-xl);
+}
+
 .hub-brand__logo {
   width: 40px;
   height: 40px;
@@ -148,6 +170,11 @@ html[data-theme="light"] .hub-sidebar::-webkit-scrollbar-thumb {
   letter-spacing: 0.09em;
   color: var(--color-text-muted);
   margin: 0 0 var(--space-3);
+}
+
+a.hub-nav__item {
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .hub-nav__item {

@@ -89,8 +89,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="대비 체크">' +
-      '<header class="page-hero">' +
-      "<h1>대비 체크</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>대비 체크</h2>" +
       "<p>전경/배경 색상의 대비비(Contrast ratio)를 계산하고 WCAG AA/AAA 통과 여부를 확인합니다.</p>" +
       "</header>" +
       '<div class="generator">' +

@@ -107,8 +107,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="섀도우 프리셋">' +
-      '<header class="page-hero">' +
-      "<h1>섀도우 프리셋</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>섀도우 프리셋</h2>" +
       "<p>여러 레이어의 box-shadow를 조절하고 CSS를 복사하거나 프리셋으로 저장하세요.</p>" +
       "</header>" +
       '<div class="generator">' +

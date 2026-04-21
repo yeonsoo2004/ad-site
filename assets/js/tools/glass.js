@@ -17,8 +17,8 @@
     return (
       '<section class="tool-root" aria-label="글래스모피즘">' +
       '<header class="page-hero">' +
-      "<h1>글래스모피즘 CSS 생성기</h1>" +
-      "<p>블러, 투명도, 테두리, 그림자를 조절해 미리보기와 함께 바로 쓸 수 있는 CSS 코드를 만듭니다.</p>" +
+      "<h2>글래스모피즘 CSS 생성기</h2>" +
+      '<p>블러, 투명도, 테두리, 그림자를 조절해 <br class="u-br--sm" /> 미리보기와 함께 바로 쓸 수 있는 CSS 코드를 만듭니다.</p>' +
       "</header>" +
       '<div class="tool-tabs" role="navigation" aria-label="글래스 도구 탭">' +
       '<button type="button" class="tool-tab" data-glass-tab="generator" aria-current="page">생성기</button>' +
@@ -85,11 +85,11 @@
       "</div>" +
       "</div>" +
       '<div class="tool-pane" data-glass-pane="presets">' +
-      '<header class="page-hero page-hero--compact"><h1>글래스 프리셋</h1><p>마음에 드는 스타일을 눌러 생성기에 불러오세요.</p></header>' +
+      '<header class="page-hero page-hero--compact"><h2>글래스 프리셋</h2><p>마음에 드는 스타일을 눌러 생성기에 불러오세요.</p></header>' +
       '<div id="presets-root"></div>' +
       "</div>" +
       '<div class="tool-pane" data-glass-pane="showcase">' +
-      '<header class="page-hero page-hero--compact"><h1>쇼케이스</h1><p>생성기에서 조절한 글래스 값이 이 영역에도 실시간으로 반영됩니다.</p></header>' +
+      '<header class="page-hero page-hero--compact"><h2>쇼케이스</h2><p>생성기에서 조절한 글래스 값이 이 영역에도 실시간으로 반영됩니다.</p></header>' +
       '<div class="showcase-shell"><div class="showcase-stage">' +
       '<div class="showcase-blobs" aria-hidden="true">' +
       '<span class="showcase-blob showcase-blob--coral"></span>' +
@@ -116,7 +116,7 @@
       "</div></div></div></div>" +
       "</div>" +
       '<div class="tool-pane" data-glass-pane="guide">' +
-      '<header class="page-hero page-hero--compact"><h1>가이드</h1><p>생성기·프리셋·쇼케이스를 효과적으로 쓰는 방법과 팁을 정리했습니다.</p></header>' +
+      '<header class="page-hero page-hero--compact"><h2>가이드</h2><p>생성기·프리셋·쇼케이스를 효과적으로 쓰는 방법과 팁을 정리했습니다.</p></header>' +
       '<div class="guide-layout">' +
       '<article class="guide-block generator__panel"><h2 class="guide-block__title">1. 생성기로 값 맞추기</h2><p class="guide-block__text">슬라이더로 블러·투명도·테두리·반경·그림자·틴트 색을 조절하면 <strong>생성된 CSS</strong>가 함께 갱신됩니다.</p><ul class="guide-list"><li>배경이 단조로우면 블러가 잘 안 보입니다. 이미지 URL을 넣거나 색 덩어리를 두세요.</li><li><code class="guide-code">backdrop-filter</code>는 카드 뒤에 콘텐츠가 있을 때 효과가 큽니다.</li></ul></article>' +
       '<article class="guide-block generator__panel"><h2 class="guide-block__title">2. 프리셋 → 생성기</h2><p class="guide-block__text"><strong>프리셋</strong>에서 카드를 클릭하면 슬라이더·미리보기에 반영되고 자동으로 <strong>생성기</strong>로 이동합니다.</p></article>' +

@@ -228,8 +228,8 @@
 
     return (
       '<section class="tool-root" aria-label="애니메이션">' +
-      '<header class="page-hero">' +
-      "<h1>애니메이션</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>애니메이션</h2>" +
       "<p>keyframes + animation shorthand를 생성하고, 미리보기로 동작을 확인하세요.</p>" +
       "</header>" +
       '<div class="generator">' +

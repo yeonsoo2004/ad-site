@@ -1,4 +1,4 @@
-/* app — CSS Utility Hub SPA (tool loader) */
+/* app — CSS Utility Hub (index: 해시 SPA · subpage: 고정 도구) */
 (function () {
   var shell = document.getElementById("hub-shell");
   var sidebar = document.getElementById("hub-sidebar");
@@ -12,6 +12,10 @@
   var tools = (window.Tools = window.Tools || {});
   var activeCleanup = null;
   var activeToolId = null;
+  var fixedToolId =
+    window.__HUB_PAGE__ && window.__HUB_PAGE__.tool
+      ? normalizeToolId(window.__HUB_PAGE__.tool)
+      : null;
 
   function setDrawerOpen(open) {
     if (!shell) return;
@@ -53,9 +57,13 @@
     return normalizeToolId(hash);
   }
 
-  function go(id, options) {
-    options = options || {};
-    var toolId = normalizeToolId(id);
+  function getInitialToolId() {
+    if (fixedToolId) return fixedToolId;
+    return getToolFromHash();
+  }
+
+  function resolveToolId(requested) {
+    var toolId = normalizeToolId(requested);
     if (!toolId) toolId = "glass";
     if (!tools[toolId]) {
       if (tools["coming-soon"]) {
@@ -74,8 +82,14 @@
         toolId = "glass";
       }
     }
+    return toolId;
+  }
 
-    if (activeToolId === toolId) {
+  function go(id, options) {
+    options = options || {};
+    var toolId = resolveToolId(id);
+
+    if (activeToolId === toolId && !options.force) {
       closeDrawer();
       return;
     }
@@ -92,23 +106,37 @@
 
     var tool = tools[toolId];
     if (toolTitle) toolTitle.textContent = tool && tool.title ? tool.title : toolId;
+    if (tool && tool.title) {
+      document.title = tool.title + " — CSS Utility Hub";
+    }
 
     container.innerHTML = "";
     if (tool && typeof tool.render === "function") {
       activeCleanup = tool.render(container) || null;
     }
 
-    if (!options.skipHash && window.history && window.history.replaceState) {
-      window.history.replaceState(null, "", "#" + toolId);
-    } else {
-      window.location.hash = "#" + toolId;
+    if (fixedToolId) {
+      if (window.history && window.history.replaceState && window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    } else if (!options.skipHash) {
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, "", "#" + toolId);
+      } else {
+        window.location.hash = "#" + toolId;
+      }
     }
 
     closeDrawer();
   }
 
   sidebar.addEventListener("click", function (e) {
-    var btn = e.target.closest("[data-tool]");
+    var link = e.target.closest("a.hub-nav__item[data-tool]");
+    if (link && sidebar.contains(link)) {
+      closeDrawer();
+      return;
+    }
+    var btn = e.target.closest("button.hub-nav__item[data-tool]");
     if (!btn || !sidebar.contains(btn)) return;
     e.preventDefault();
     var id = btn.getAttribute("data-tool");
@@ -133,12 +161,13 @@
     if (e.key === "Escape") closeDrawer();
   });
 
-  window.addEventListener("hashchange", function () {
-    go(getToolFromHash(), { skipHash: true });
-  });
+  if (!fixedToolId) {
+    window.addEventListener("hashchange", function () {
+      go(getToolFromHash(), { skipHash: true });
+    });
+  }
 
   document.addEventListener("DOMContentLoaded", function () {
-    go(getToolFromHash(), { skipHash: true });
+    go(getInitialToolId(), { skipHash: true });
   });
 })();
-

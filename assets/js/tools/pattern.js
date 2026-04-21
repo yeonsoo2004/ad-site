@@ -153,8 +153,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="패턴 생성기">' +
-      '<header class="page-hero">' +
-      "<h1>패턴 생성기</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>패턴 생성기</h2>" +
       "<p>Dots / Stripes / Grid 패턴을 만들고 CSS를 복사하거나 프리셋으로 저장하세요.</p>" +
       "</header>" +
       '<div class="generator">' +

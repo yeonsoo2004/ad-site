@@ -80,8 +80,8 @@
   function toolTemplate() {
     return (
       '<section class="tool-root" aria-label="그라디언트 메이커">' +
-      '<header class="page-hero">' +
-      "<h1>그라디언트 메이커</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>그라디언트 메이커</h2>" +
       "<p>Linear / Radial / Conic 그라디언트를 만들고 CSS를 복사하거나 프리셋으로 저장하세요.</p>" +
       "</header>" +
       '<div class="generator">' +

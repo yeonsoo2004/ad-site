@@ -29,8 +29,8 @@
   function neumoTemplate() {
     return (
       '<section class="tool-root" aria-label="뉴모피즘">' +
-      '<header class="page-hero">' +
-      "<h1>뉴모피즘(Neumorphism) 빌더</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>뉴모피즘(Neumorphism) 빌더</h2>" +
       "<p>부드러운 플라스틱 질감의 이중 그림자(box-shadow)를 조절해 버튼/카드를 빠르게 만들어요.</p>" +
       "</header>" +
       '<div class="generator">' +

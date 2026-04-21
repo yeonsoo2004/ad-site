@@ -3,8 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="15가지 디자인 툴을 담는 종합 CSS 유틸리티 허브" />
-    <title>CSS Utility Hub — 디자인 툴 모음</title>
+    <meta
+      name="description"
+      content="15가지 CSS 디자인 유틸리티 도구를 한곳에서. 글래스, 뉴모피즘, 그리드, 팔레트, 섀도우, 타이포 스케일까지 생성기 모음."
+    />
+    <title>CSS Utility Hub — 메인</title>
+
+    <!-- ================== 기본 메타 태그 (SEO) ================== -->
+    <meta name="title" content="CSS Utility Hub — 메인" />
+    <meta
+      name="keywords"
+      content="CSS 도구, CSS 생성기, 디자인 유틸리티, 글래스모피즘, 뉴모피즘, 그라디언트, 메쉬 그라디언트, 패턴, 그리드, 플렉스, 타이포 스케일, 팔레트, 대비, 섀도우, 스페이싱"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
+    <meta property="og:title" content="CSS Utility Hub — 메인" />
+    <meta
+      property="og:description"
+      content="글래스/뉴모피즘/그라디언트/그리드/팔레트 등 15가지 CSS 유틸리티 도구를 한곳에서. 빠르게 만들고 복사하세요."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="index.html" />
+    <meta property="og:image" content="assets/images/icon/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="CSS Utility Hub" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CSS Utility Hub — 메인" />
+    <meta
+      name="twitter:description"
+      content="CSS Utility Hub: 15가지 CSS 디자인 유틸리티 도구 모음. 미리보기로 확인하고 결과 CSS를 복사하세요."
+    />
+    <meta name="twitter:image" content="assets/images/icon/favicon.png" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
+    <meta name="language" content="ko" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="index.html" />
+
+    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <link rel="icon" href="assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/icon/favicon.png" />
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
       rel="stylesheet"
@@ -14,6 +71,7 @@
     <link rel="stylesheet" href="assets/css/common.css" />
     <link rel="stylesheet" href="assets/css/hub.css" />
     <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/landing.css" />
     <link rel="stylesheet" href="assets/css/footer.css" />
     <script>
       (function () {
@@ -25,92 +83,298 @@
     </script>
   </head>
   <body>
-    <div class="hub-shell" id="hub-shell">
-      <div class="hub-drawer-backdrop" id="hub-backdrop" hidden></div>
-
-      <aside class="hub-sidebar" id="hub-sidebar" aria-label="도구 메뉴"></aside>
-
-      <div class="hub-main">
-        <header class="hub-topbar" aria-label="상단 바">
-          <button
-            type="button"
-            class="hub-topbar__icon"
-            id="hub-menu-btn"
-            aria-label="메뉴 열기"
-            aria-controls="hub-sidebar"
-            aria-expanded="false"
+    <div class="landing-shell">
+      <header class="landing-topbar" aria-label="상단 바">
+        <div class="landing-topbar__brand">
+          <span class="landing-topbar__logo" aria-hidden="true"></span>
+          <div class="landing-topbar__title">CSS Utility Hub</div>
+        </div>
+        <button type="button" class="hub-topbar__icon" id="theme-toggle" aria-label="테마 전환">
+          <span class="sr-only theme-toggle-label">테마 전환</span>
+          <svg
+            class="theme-icon--moon"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
           >
-            <span class="hub-burger" aria-hidden="true"><span></span><span></span><span></span></span>
-          </button>
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg
+            class="theme-icon--sun"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            />
+          </svg>
+        </button>
+      </header>
 
-          <div class="hub-topbar__title">
-            <div class="hub-topbar__kicker">선택된 도구</div>
-            <div class="hub-topbar__name" id="current-tool-title">글래스모피즘</div>
+      <main class="landing-main">
+        <section class="landing-hero">
+          <h1>CSS Utility Hub</h1>
+          <p>
+            글래스, 뉴모피즘, 그리드/플렉스, 타이포 스케일, 팔레트·대비 체크까지.
+            <br class="u-br--sm" />
+            필요한 CSS를 빠르게 만들고 복사하세요.
+          </p>
+          <div class="landing-cta-row">
+            <a class="btn btn--primary" href="subpage/glass.html">바로 시작하기</a>
+            <a class="btn btn--ghost" href="hub.html">허브(앱) 모드</a>
           </div>
+        </section>
 
-          <div class="hub-topbar__actions">
-            <button type="button" class="hub-topbar__icon" id="theme-toggle" aria-label="테마 전환">
-              <span class="sr-only theme-toggle-label">테마 전환</span>
-              <svg
-                class="theme-icon--moon"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                aria-hidden="true"
+        <div class="landing-sections" aria-label="도구 카테고리">
+          <section class="landing-section">
+            <h2 class="landing-section__title">트렌디 UI</h2>
+            <div class="tool-grid">
+              <a class="tool-card" href="subpage/glass.html"
+                ><div class="tool-card__name">글래스모피즘</div>
+                <p class="tool-card__desc">유리 느낌 카드/패널 생성</p></a
               >
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-              <svg
-                class="theme-icon--sun"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                aria-hidden="true"
+              <a class="tool-card" href="subpage/neumorphism.html"
+                ><div class="tool-card__name">뉴모피즘</div>
+                <p class="tool-card__desc">소프트 UI 그림자 프리셋</p></a
               >
-                <circle cx="12" cy="12" r="4" />
-                <path
-                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                />
-              </svg>
-            </button>
+              <a class="tool-card" href="subpage/gradient.html"
+                ><div class="tool-card__name">그라디언트</div>
+                <p class="tool-card__desc">Linear/Radial/Conic 생성</p></a
+              >
+              <a class="tool-card" href="subpage/mesh.html"
+                ><div class="tool-card__name">메쉬 그라디언트</div>
+                <p class="tool-card__desc">radial 레이어로 메쉬 느낌</p></a
+              >
+              <a class="tool-card" href="subpage/pattern.html"
+                ><div class="tool-card__name">패턴</div>
+                <p class="tool-card__desc">Dots/Stripes/Grid 패턴</p></a
+              >
+            </div>
+          </section>
+
+          <section class="landing-section">
+            <h2 class="landing-section__title">레이아웃</h2>
+            <div class="tool-grid">
+              <a class="tool-card" href="subpage/grid.html"
+                ><div class="tool-card__name">그리드</div>
+                <p class="tool-card__desc">CSS Grid 빌더</p></a
+              >
+              <a class="tool-card" href="subpage/flex.html"
+                ><div class="tool-card__name">플렉스박스</div>
+                <p class="tool-card__desc">Flex 컨테이너 빌더</p></a
+              >
+              <a class="tool-card" href="subpage/spacing.html"
+                ><div class="tool-card__name">스페이싱</div>
+                <p class="tool-card__desc">간격 스케일 만들기</p></a
+              >
+              <a class="tool-card" href="subpage/container.html"
+                ><div class="tool-card__name">컨테이너</div>
+                <p class="tool-card__desc">폭·패딩 계산기</p></a
+              >
+            </div>
+          </section>
+
+          <section class="landing-section">
+            <h2 class="landing-section__title">타이포 / 컬러</h2>
+            <div class="tool-grid">
+              <a class="tool-card" href="subpage/type.html"
+                ><div class="tool-card__name">타이포 스케일</div>
+                <p class="tool-card__desc">폰트 스케일 &amp; CSS 변수</p></a
+              >
+              <a class="tool-card" href="subpage/palette.html"
+                ><div class="tool-card__name">팔레트</div>
+                <p class="tool-card__desc">50~900 스케일 생성</p></a
+              >
+              <a class="tool-card" href="subpage/contrast.html"
+                ><div class="tool-card__name">대비 체크</div>
+                <p class="tool-card__desc">WCAG 대비 확인</p></a
+              >
+            </div>
+          </section>
+
+          <section class="landing-section">
+            <h2 class="landing-section__title">CSS 도우미</h2>
+            <div class="tool-grid">
+              <a class="tool-card" href="subpage/shadow.html"
+                ><div class="tool-card__name">섀도우</div>
+                <p class="tool-card__desc">다중 레이어 그림자</p></a
+              >
+              <a class="tool-card" href="subpage/border.html"
+                ><div class="tool-card__name">보더/라디우스</div>
+                <p class="tool-card__desc">border·radius·outline</p></a
+              >
+              <a class="tool-card" href="subpage/animation.html"
+                ><div class="tool-card__name">애니메이션</div>
+                <p class="tool-card__desc">keyframes + shorthand</p></a
+              >
+            </div>
+          </section>
+        </div>
+
+        <div class="seo-wrap">
+          <article class="seo-doc" aria-label="CSS Utility Hub 소개 문서">
+            <h2>CSS Utility Hub 소개: 15가지 디자인 도구를 한곳에서</h2>
+            <p>
+              CSS Utility Hub는 실무에서 자주 필요한 스타일을 “빠르게 만들고, 복사하고, 반복 적용”할 수 있도록 만든
+              디자인 유틸리티 모음입니다. 글래스/뉴모피즘 같은 트렌디 UI부터 그리드/플렉스 같은 레이아웃,
+              타이포/팔레트/대비 체크 같은 시스템 영역까지 한 화면에서 연결되어, 디자인과 구현 사이의 반복 작업을 줄입니다.
+              각 도구는 결과 CSS를 바로 제공하며, 일부 도구는 프리셋 저장/불러오기 기능을 통해 팀의 규칙을 축적할 수 있습니다.
+            </p>
+
+            <nav class="seo-toc" aria-label="문서 목차">
+              <div class="seo-toc__title">목차</div>
+              <ol>
+                <li><a href="#seo-main-what">이 사이트로 무엇을 할 수 있나요</a></li>
+                <li><a href="#seo-main-tools">도구 카테고리 구성</a></li>
+                <li><a href="#seo-main-flow">추천 사용 흐름(빠른 시작)</a></li>
+                <li><a href="#seo-main-a11y">접근성/성능 기준을 함께 챙기는 방법</a></li>
+                <li><a href="#seo-main-faq">자주 묻는 질문(FAQ)</a></li>
+              </ol>
+            </nav>
+
+            <section id="seo-main-what" aria-label="사이트 목적">
+              <h2>이 사이트로 무엇을 할 수 있나요</h2>
+              <p>
+                디자인을 만들 때 “값을 조금만 조절해도 느낌이 확 달라지는” 영역이 있습니다. 블러, 섀도우, 라디우스,
+                그라디언트, 간격, 타이포 같은 값은 눈으로 확인하면서 튜닝하는 편이 훨씬 빠릅니다. 이 사이트는 그런
+                반복을 단축하기 위해, 컨트롤(슬라이더/셀렉트/컬러피커)과 미리보기를 함께 제공하고, 최종 결과를 CSS로
+                바로 복사할 수 있게 구성했습니다.
+              </p>
+              <ul>
+                <li><strong>빠른 실험</strong>: “이 값이 맞나?”를 코드 편집기에서 반복하지 않고 UI에서 바로 확인</li>
+                <li><strong>규칙 만들기</strong>: spacing/type/palette처럼 시스템 규칙을 토큰으로 정리</li>
+                <li><strong>품질 보강</strong>: contrast 같은 검증 도구로 접근성 기준을 함께 체크</li>
+                <li><strong>재사용</strong>: 프리셋 저장으로 프로젝트의 스타일 조합을 축적</li>
+              </ul>
+            </section>
+
+            <section id="seo-main-tools" aria-label="카테고리 설명">
+              <h2>도구 카테고리 구성</h2>
+              <p>
+                이 허브는 목적이 겹치지 않도록 도구를 카테고리로 나눴습니다. “트렌디 UI”는 배경/질감의 분위기를,
+                “레이아웃”은 구조와 간격을, “타이포/컬러”는 시스템의 기준을, “CSS 도우미”는 디테일(섀도우/보더/모션)을
+                담당합니다. 메인 화면의 카드 메뉴를 누르면 각 도구의 서브페이지로 이동합니다.
+              </p>
+              <ul>
+                <li><strong>트렌디 UI</strong>: 글래스, 뉴모피즘, 그라디언트, 메쉬, 패턴</li>
+                <li><strong>레이아웃</strong>: 그리드, 플렉스, 스페이싱, 컨테이너</li>
+                <li><strong>타이포/컬러</strong>: 타이포 스케일, 팔레트, 대비 체크</li>
+                <li><strong>CSS 도우미</strong>: 섀도우, 보더/라디우스, 애니메이션</li>
+              </ul>
+              <div class="seo-note">
+                <p>
+                  추천: 처음에는 “컨테이너 → 스페이싱 → 타이포” 순서로 기준을 잡고, 그 다음에 그리드/플렉스를 맞춘 뒤,
+                  마지막으로 글래스/섀도우/보더/애니메이션으로 톤을 올리면 빠르게 완성도를 만들 수 있습니다.
+                </p>
+              </div>
+            </section>
+
+            <section id="seo-main-flow" aria-label="추천 흐름">
+              <h2>추천 사용 흐름(빠른 시작)</h2>
+              <ol>
+                <li><strong>레이아웃 기준</strong>: 컨테이너 계산기로 폭/거터를 정하고, 스페이싱으로 간격 토큰을 만듭니다.</li>
+                <li><strong>타이포 기준</strong>: 타이포 스케일로 본문/헤딩 계층을 정하고 CSS 변수를 확보합니다.</li>
+                <li><strong>컬러 기준</strong>: 팔레트로 스케일을 만든 뒤 대비 체크로 주요 조합이 읽히는지 검증합니다.</li>
+                <li><strong>구조 배치</strong>: 그리드/플렉스로 섹션과 컴포넌트 정렬을 완성합니다.</li>
+                <li><strong>톤 업</strong>: 글래스/뉴모피즘/섀도우/보더/애니메이션으로 제품 느낌을 마감합니다.</li>
+              </ol>
+              <p>
+                위 순서는 “가이드라인”일 뿐이고, 필요한 도구부터 바로 사용해도 됩니다. 다만 기준을 먼저 정해 두면,
+                이후 도구에서 나오는 값들이 한 톤으로 연결되어 수정 비용이 크게 줄어듭니다.
+              </p>
+            </section>
+
+            <section id="seo-main-a11y" aria-label="접근성과 성능">
+              <h2>접근성/성능 기준을 함께 챙기는 방법</h2>
+              <p>
+                검색 노출(구글/네이버/빙)은 단순히 키워드뿐 아니라 사용자 경험과도 연결됩니다. 가독성이 떨어지거나
+                인터랙션이 불명확하면 이탈이 늘고, 결과적으로 품질 신호가 나빠질 수 있습니다. 이 허브는 대비 체크,
+                토큰 기반 설계, transform/opacity 중심 모션 등 실무에서 안전한 기준을 함께 안내합니다.
+              </p>
+              <ul>
+                <li><strong>대비</strong>: 텍스트/배경 조합은 WCAG 기준을 확인해 기본 가독성을 확보</li>
+                <li><strong>포커스</strong>: outline을 제거하지 않고 디자인에 맞게 다듬어 키보드 탐색을 지원</li>
+                <li><strong>모션</strong>: 과한 infinite/흔들림을 피하고 필요한 순간에만 재생</li>
+                <li><strong>성능</strong>: 큰 blur/복잡한 레이어는 면적과 개수를 제한해 저사양에서도 안정적으로</li>
+              </ul>
+            </section>
+
+            <section id="seo-main-faq" aria-label="자주 묻는 질문">
+              <h2>자주 묻는 질문(FAQ)</h2>
+              <ul>
+                <li><strong>Q. 어떤 도구부터 써야 하나요?</strong> A. 레이아웃 기준(컨테이너/스페이싱/타이포)을 먼저 잡으면 전체 품질이 빨리 올라갑니다.</li>
+                <li><strong>Q. 다크/라이트 테마는 어떻게 유지되나요?</strong> A. 테마 선택은 브라우저 저장소에 저장되어 다음 방문에도 유지됩니다.</li>
+                <li><strong>Q. 결과 CSS는 그대로 써도 되나요?</strong> A. 그대로 써도 되지만, 프로젝트 규칙에 맞게 토큰/네이밍으로 정리하면 유지보수가 쉬워집니다.</li>
+              </ul>
+            </section>
+          </article>
+        </div>
+      </main>
+
+      <footer class="site-footer" id="site-footer">
+        <div class="site-footer__inner">
+          <div class="site-footer__col">
+            <p class="site-footer__meta">Glass CSS Gen</p>
+            <p class="site-footer__credit">
+              Designed &amp; Developed by <span lang="en">Studio Glass</span>
+            </p>
           </div>
-        </header>
-
-        <main class="hub-content" id="hub-content">
-          <div id="tool-container" class="tool-container" aria-live="polite"></div>
-        </main>
-      </div>
+          <a class="site-footer__link" href="mailto:hello@glasscss.example">yspark004@naver.com</a>
+        </div>
+      </footer>
     </div>
-
-    <footer class="site-footer" id="site-footer"></footer>
-
-    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
-
-    <script src="assets/js/hub.js" defer></script>
+\n    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CSS Utility Hub",
+        "description": "CSS 디자인 유틸리티 도구 모음(글래스, 뉴모피즘, 그리드, 팔레트 등).",
+        "inLanguage": "ko"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "어떤 도구부터 써야 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "레이아웃 기준(컨테이너/스페이싱/타이포)을 먼저 잡으면 전체 품질이 빨리 올라갑니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "다크/라이트 테마는 어떻게 유지되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "테마 선택은 브라우저 저장소에 저장되어 다음 방문에도 유지됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "결과 CSS는 그대로 써도 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "그대로 써도 되지만, 프로젝트 규칙에 맞게 토큰/네이밍으로 정리하면 유지보수가 쉬워집니다."
+            }
+          }
+        ]
+      }
+    </script>
     <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/tools/glass.js" defer></script>
-    <script src="assets/js/tools/neumorphism.js" defer></script>
-    <script src="assets/js/tools/gradient.js" defer></script>
-    <script src="assets/js/tools/mesh.js" defer></script>
-    <script src="assets/js/tools/pattern.js" defer></script>
-    <script src="assets/js/tools/grid.js" defer></script>
-    <script src="assets/js/tools/flex.js" defer></script>
-    <script src="assets/js/tools/spacing.js" defer></script>
-    <script src="assets/js/tools/container.js" defer></script>
-    <script src="assets/js/tools/type.js" defer></script>
-    <script src="assets/js/tools/palette.js" defer></script>
-    <script src="assets/js/tools/contrast.js" defer></script>
-    <script src="assets/js/tools/shadow.js" defer></script>
-    <script src="assets/js/tools/border.js" defer></script>
-    <script src="assets/js/tools/animation.js" defer></script>
-    <script src="assets/js/tools/coming-soon.js" defer></script>
-    <script src="assets/js/hub-layout.js" defer></script>
-    <script src="assets/js/app.js" defer></script>
   </body>
 </html>
+

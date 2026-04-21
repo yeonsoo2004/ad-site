@@ -149,8 +149,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="타이포 스케일">' +
-      '<header class="page-hero">' +
-      "<h1>타이포 스케일</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>타이포 스케일</h2>" +
       "<p>모듈러 스케일 기반 폰트 사이즈 토큰(--text-*)과 유틸 클래스를 자동 생성합니다.</p>" +
       "</header>" +
       '<div class="generator">' +

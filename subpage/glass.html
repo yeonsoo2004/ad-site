@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="글래스모피즘 — CSS Utility Hub 도구" />
+    <title>글래스모피즘 — CSS Utility Hub</title>
+
+    <!-- ================== 기본 메타 태그 (SEO) ================== -->
+    <meta name="title" content="글래스모피즘 CSS 생성기 — CSS Utility Hub" />
+    <meta
+      name="description"
+      content="Glassmorphism(글래스모피즘) 스타일을 blur/opacity/border/shadow로 조절해 미리보기로 확인하고 CSS를 복사하는 글래스 생성기."
+    />
+    <meta
+      name="keywords"
+      content="글래스모피즘, Glassmorphism, backdrop-filter, blur, 반투명, 유리 UI, CSS 생성기, 카드 UI"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
+    <meta property="og:title" content="글래스모피즘 CSS 생성기 — CSS Utility Hub" />
+    <meta
+      property="og:description"
+      content="backdrop-filter 기반 글래스 UI를 빠르게 만들고 CSS를 복사하세요. blur/opacity/border/shadow 조절 지원."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="subpage/glass.html" />
+    <meta property="og:image" content="assets/images/icon/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="CSS Utility Hub" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="글래스모피즘 CSS 생성기 — CSS Utility Hub" />
+    <meta
+      name="twitter:description"
+      content="Glass UI(글래스모피즘)를 blur/opacity/border/shadow로 조절하고 CSS를 복사하세요."
+    />
+    <meta name="twitter:image" content="assets/images/icon/favicon.png" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
+    <meta name="language" content="ko" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="subpage/glass.html" />
+
+    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <link rel="icon" href="../assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/icon/favicon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/hub.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      window.__HUB_PAGE__ = { tool: "glass" };
+    </script>
+  </head>
+  <body>
+    <div id="hub-root">
+      <div class="seo-wrap">
+        <article class="seo-doc" aria-label="글래스모피즘 도구 설명 문서">
+          <h1>글래스모피즘 CSS 생성기: backdrop-filter로 유리 UI를 구현하는 실전 가이드</h1>
+          <p>
+            글래스모피즘(Glassmorphism)은 반투명 레이어, 블러, 은은한 테두리와 그림자를 조합해 “유리처럼
+            겹쳐진 UI”를 만드는 스타일입니다. 이 페이지의 생성기는 blur, opacity, border, radius, shadow,
+            tint 색을 조절해 즉시 결과를 확인하고 CSS를 복사할 수 있게 해줍니다. 글래스는 단순히 예쁜 효과가
+            아니라, 배경 위에 정보 계층을 만들고 집중도를 높이는 도구이기도 합니다.
+          </p>
+
+          <nav class="seo-toc" aria-label="문서 목차">
+            <div class="seo-toc__title">목차</div>
+            <ol>
+              <li><a href="#seo-glass-what">글래스모피즘이란 무엇인가</a></li>
+              <li><a href="#seo-howto">생성기 사용 방법(권장 흐름)</a></li>
+              <li><a href="#seo-css">핵심 CSS 속성 정리(backdrop-filter, rgba, border, shadow)</a></li>
+              <li><a href="#seo-design">디자인 팁: 배경/대비/레이어</a></li>
+              <li><a href="#seo-performance">성능/호환성 체크리스트</a></li>
+              <li><a href="#seo-faq">자주 묻는 질문(FAQ)</a></li>
+            </ol>
+          </nav>
+
+          <section id="seo-glass-what" aria-label="개요">
+            <h2>글래스모피즘이란 무엇인가</h2>
+            <p>
+              글래스모피즘의 핵심은 “뒤의 배경을 흐리게 보이게 하면서도 텍스트는 또렷하게” 만드는 균형입니다.
+              카드/모달/플로팅 패널/위젯 같은 UI는 배경과 분리되어야 하지만, 완전히 불투명하면 무겁게 느껴질 수 있습니다.
+              글래스는 그 중간 지점을 제공합니다.
+            </p>
+            <ul>
+              <li><strong>레이어감</strong>: 배경과 전경이 자연스럽게 분리됩니다.</li>
+              <li><strong>시각적 통일</strong>: 동일한 블러/보더 규칙을 쓰면 UI가 한 톤으로 묶입니다.</li>
+              <li><strong>브랜딩</strong>: 틴트(tint) 색으로 분위기를 쉽게 바꿀 수 있습니다.</li>
+              <li><strong>활용</strong>: 플레이어, 알림, 대시보드, 로그인 카드 등 다양한 패턴에 적용됩니다.</li>
+            </ul>
+            <div class="seo-note">
+              <p>
+                추천: 글래스는 “배경이 풍부할수록” 더 예쁘게 보입니다. 단색 배경에서는 블러가 티가 덜 나므로,
+                그라디언트/패턴/이미지 배경과 조합하면 효과가 확실해집니다.
+              </p>
+            </div>
+          </section>
+
+          <section id="seo-howto" aria-label="사용 방법">
+            <h2>생성기 사용 방법(권장 흐름)</h2>
+            <ol>
+              <li><strong>배경 준비</strong>: 프리뷰에 배경 이미지 URL을 넣거나, 기본 블롭 배경을 사용합니다.</li>
+              <li><strong>blur</strong>: 8~20px 범위에서 시작해 “유리 느낌”을 잡습니다.</li>
+              <li><strong>opacity</strong>: 12~28% 정도부터 조절해 텍스트 가독성과 레이어감을 맞춥니다.</li>
+              <li><strong>border</strong>: 1px로 두고, 라이트 모드에서는 조금 더 또렷하게 보이도록 합니다.</li>
+              <li><strong>radius</strong>: 카드/모달 성격에 맞게 md~xl 범위로 통일합니다.</li>
+              <li><strong>shadow</strong>: 레이어가 뜨는 정도를 조절합니다(과하면 싸구려 느낌이 날 수 있음).</li>
+              <li><strong>복사/저장</strong>: 결과 CSS를 복사하고, 자주 쓰면 프리셋으로 저장합니다.</li>
+            </ol>
+            <p>
+              글래스 UI를 더 “제품스럽게” 보이게 하려면, 테두리/라디우스/섀도우 규칙을 함께 정리하는 것이 좋습니다.
+              <a href="./border.html">보더/라디우스</a>와 <a href="./shadow.html">섀도우</a> 도구를 함께 사용해 보세요.
+            </p>
+          </section>
+
+          <section id="seo-css" aria-label="핵심 CSS">
+            <h2>핵심 CSS 속성 정리(backdrop-filter, rgba, border, shadow)</h2>
+            <p>
+              글래스모피즘은 여러 속성의 조합입니다. 하나만 강하게 주면 유리 느낌이 아니라 “흐릿한 박스”가 됩니다.
+              핵심은 균형입니다.
+            </p>
+            <ul>
+              <li><strong>background</strong>: 보통 rgba/hsla로 반투명 레이어를 만듭니다.</li>
+              <li><strong>backdrop-filter</strong>: 카드 뒤의 픽셀을 블러 처리해 유리 느낌을 만듭니다.</li>
+              <li><strong>border</strong>: 얇은 하이라이트 라인으로 경계를 또렷하게 합니다.</li>
+              <li><strong>box-shadow</strong>: 배경에서 살짝 떠 있는 레이어감을 만듭니다.</li>
+            </ul>
+            <p>
+              실무에서는 “라이트/다크 모드”에서 같은 값이 다르게 느껴질 수 있습니다. 다크 모드에서는 블러가 더 또렷하고,
+              라이트 모드에서는 테두리/그림자가 더 중요해지는 경향이 있습니다. 따라서 테마별로 테두리 톤을 조절하는 접근이 좋습니다.
+            </p>
+          </section>
+
+          <section id="seo-design" aria-label="디자인 팁">
+            <h2>디자인 팁: 배경/대비/레이어</h2>
+            <p>
+              글래스 UI에서 가장 흔한 문제는 “텍스트가 안 읽힘”입니다. 이건 글래스가 잘못된 게 아니라, 대비 설계가
+              부족한 경우가 많습니다. 배경이 복잡할수록 글래스 레이어가 배경과 섞이기 쉬워, 대비 규칙이 필요합니다.
+            </p>
+            <ul>
+              <li><strong>텍스트 대비</strong>: 글자색과 배경의 대비를 <a href="./contrast.html">대비 체크</a>로 확인합니다.</li>
+              <li><strong>오버레이</strong>: 필요하면 아주 약한 어두운/밝은 오버레이로 배경을 정리합니다.</li>
+              <li><strong>레이어 수</strong>: 한 화면에 글래스 레이어를 너무 많이 겹치면 산만해질 수 있습니다.</li>
+              <li><strong>간격</strong>: 카드 내부 패딩/간격은 <a href="./spacing.html">스페이싱 스케일</a>로 통일하면 안정적입니다.</li>
+            </ul>
+          </section>
+
+          <section id="seo-performance" aria-label="성능 및 호환성">
+            <h2>성능/호환성 체크리스트</h2>
+            <p>
+              backdrop-filter는 멋지지만, 환경에 따라 성능과 지원 여부가 달라질 수 있습니다. 따라서 “기본 배경색(반투명)”
+              만으로도 충분히 괜찮아 보이도록 설계하고, backdrop-filter는 가능한 곳에서만 강화하는 방식이 안전합니다.
+            </p>
+            <ul>
+              <li><strong>Fallback</strong>: backdrop-filter 미지원 환경에서도 읽기 가능한 배경색을 유지합니다.</li>
+              <li><strong>과한 블러 금지</strong>: blur 값을 너무 크게 올리면 성능 비용이 증가할 수 있습니다.</li>
+              <li><strong>영역 최소화</strong>: 큰 영역 전체를 블러 처리하기보다 필요한 패널에만 적용합니다.</li>
+              <li><strong>중첩 주의</strong>: 글래스 레이어를 여러 겹 중첩하면 비용이 커질 수 있습니다.</li>
+            </ul>
+          </section>
+
+          <section id="seo-faq" aria-label="자주 묻는 질문">
+            <h2>자주 묻는 질문(FAQ)</h2>
+            <ul>
+              <li><strong>Q. 글래스가 흐리기만 하고 예쁘지 않아요.</strong> A. 배경이 단조롭거나 대비가 부족한 경우가 많습니다. 배경을 풍부하게 만들고, 보더/섀도우로 경계를 보강해 보세요.</li>
+              <li><strong>Q. 텍스트가 잘 안 보입니다.</strong> A. opacity를 낮추거나(배경을 더 불투명하게), 텍스트 대비를 올리고, 필요하면 약한 오버레이를 추가하세요.</li>
+              <li><strong>Q. 모바일에서 성능이 떨어져요.</strong> A. blur를 낮추고, 글래스 레이어의 면적/개수를 줄이는 것이 가장 효과적입니다.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "메인", "item": "../index.html" },
+          { "@type": "ListItem", "position": 2, "name": "글래스모피즘", "item": "./glass.html" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "글래스가 흐리기만 하고 예쁘지 않아요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "배경이 단조롭거나 대비가 부족한 경우가 많습니다. 배경을 풍부하게 만들고 보더/섀도우로 경계를 보강해 보세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "텍스트가 잘 안 보입니다.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "opacity를 낮추고 텍스트 대비를 올리며, 필요하면 약한 오버레이를 추가해 가독성을 확보하세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "모바일에서 성능이 떨어져요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "blur를 낮추고 글래스 레이어의 면적과 개수를 줄이는 것이 가장 효과적입니다."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script src="../assets/js/hub.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/tools/glass.js" defer></script>
+    <script src="../assets/js/tools/coming-soon.js" defer></script>
+    <script src="../assets/js/hub-layout.js" defer></script>
+    <script src="../assets/js/hub-bootstrap.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>

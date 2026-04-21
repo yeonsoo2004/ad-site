@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="팔레트 생성기 — CSS Utility Hub 도구" />
+    <title>팔레트 생성기 — CSS Utility Hub</title>
+
+    <!-- ================== 기본 메타 태그 (SEO) ================== -->
+    <meta name="title" content="팔레트 생성기 — CSS Utility Hub" />
+    <meta
+      name="description"
+      content="브랜드/제품 UI에 맞는 컬러 팔레트를 생성하고, 톤/대비/조합을 미리보기로 확인한 뒤 HEX/RGB/CSS 변수로 복사하는 팔레트 생성기."
+    />
+    <meta
+      name="keywords"
+      content="color palette, 팔레트 생성기, 컬러 조합, HEX, RGB, CSS variables, 디자인 시스템, 접근성 대비"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
+    <meta property="og:title" content="팔레트 생성기 — CSS Utility Hub" />
+    <meta
+      property="og:description"
+      content="컬러 팔레트를 생성하고 톤/대비를 확인한 뒤 HEX/RGB/CSS 변수로 바로 복사하세요."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="subpage/palette.html" />
+    <meta property="og:image" content="assets/images/icon/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="CSS Utility Hub" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="팔레트 생성기 — CSS Utility Hub" />
+    <meta
+      name="twitter:description"
+      content="컬러 팔레트 생성기. 조합/대비를 확인하고 HEX/RGB/CSS 변수로 복사하세요."
+    />
+    <meta name="twitter:image" content="assets/images/icon/favicon.png" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
+    <meta name="language" content="ko" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="subpage/palette.html" />
+
+    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <link rel="icon" href="../assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/icon/favicon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/hub.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      window.__HUB_PAGE__ = { tool: "palette" };
+    </script>
+  </head>
+  <body>
+    <div id="hub-root">
+      <div class="seo-wrap">
+        <article class="seo-doc" aria-label="팔레트 생성기 도구 설명 문서">
+          <h1>팔레트 생성기: 한 가지 색으로 50~900 스케일을 만들고 CSS 변수로 관리하는 방법</h1>
+          <p>
+            컬러 팔레트는 디자인 시스템의 “언어”입니다. 버튼, 링크, 배경, 테두리, 상태 색(성공/경고/오류)까지
+            모든 UI 요소는 색 규칙 위에 올라갑니다. 이 페이지의 팔레트 생성기는 기준 색(base color) 하나로
+            50~900 단계의 스케일을 만들고, 결과를 <strong>CSS 변수</strong>로 출력해 바로 복사할 수 있습니다.
+            팔레트를 토큰으로 관리하면 페이지가 늘어나도 색이 흔들리지 않고, 다크/라이트 테마에서도 규칙을 유지하기
+            쉬워집니다.
+          </p>
+
+          <nav class="seo-toc" aria-label="문서 목차">
+            <div class="seo-toc__title">목차</div>
+            <ol>
+              <li><a href="#seo-palette-why">왜 스케일 팔레트가 필요한가</a></li>
+              <li><a href="#seo-steps">50~900 스케일 이해하기</a></li>
+              <li><a href="#seo-howto">생성기 사용 방법(권장 흐름)</a></li>
+              <li><a href="#seo-tokens">CSS 변수 토큰 설계(네이밍/범위)</a></li>
+              <li><a href="#seo-contrast">대비(Contrast)와 접근성</a></li>
+              <li><a href="#seo-faq">자주 묻는 질문(FAQ)</a></li>
+            </ol>
+          </nav>
+
+          <section id="seo-palette-why" aria-label="팔레트의 필요성">
+            <h2>왜 스케일 팔레트가 필요한가</h2>
+            <p>
+              많은 프로젝트가 “primary 색 하나”만으로 시작합니다. 하지만 실제 UI를 만들다 보면 hover, active,
+              border, subtle 배경, 강조 텍스트 등 여러 톤이 필요해집니다. 이때 임의로 색을 만들기 시작하면
+              색이 빠르게 늘어나고, 페이지마다 다른 규칙이 생깁니다. 스케일 팔레트는 이 문제를 해결합니다.
+            </p>
+            <ul>
+              <li><strong>일관성</strong>: 같은 톤 단계는 어디서나 같은 의미를 갖습니다.</li>
+              <li><strong>확장성</strong>: 새로운 컴포넌트도 “단계 선택”만으로 색을 고릅니다.</li>
+              <li><strong>협업</strong>: 디자이너/개발자가 공통 언어(예: primary-600)를 공유합니다.</li>
+              <li><strong>테마</strong>: 라이트/다크에서 팔레트를 재매핑하기 쉬워집니다.</li>
+            </ul>
+            <div class="seo-note">
+              <p>
+                추천: 팔레트 스케일을 만들었다면 “텍스트/배경/보더” 용도를 먼저 정하세요. 같은 색이라도 어디에 쓰느냐에 따라
+                적정 단계가 달라집니다.
+              </p>
+            </div>
+          </section>
+
+          <section id="seo-steps" aria-label="스케일 이해">
+            <h2>50~900 스케일 이해하기</h2>
+            <p>
+              50~900 스케일은 Tailwind 등에서 널리 쓰이는 방식으로, 숫자가 작을수록 밝고, 클수록 어두운 톤을 의미합니다.
+              예를 들어 50은 매우 연한 배경, 900은 진한 텍스트/강조에 자주 사용됩니다. 이 도구는 기본적으로 500을 base로 두고
+              위/아래를 밝게/어둡게 섞어 스케일을 만듭니다.
+            </p>
+            <ul>
+              <li><strong>50~200</strong>: 배경/서브 배경, 하이라이트</li>
+              <li><strong>300~500</strong>: 기본 색, hover/active의 기준</li>
+              <li><strong>600~900</strong>: 강조 텍스트, 진한 border, 강한 배경</li>
+            </ul>
+            <p>
+              중요한 점은 숫자 자체보다 “프로젝트에서의 의미”입니다. 예를 들어 primary-600을 버튼 배경으로 쓰기로 했다면,
+              그 규칙을 유지하는 것이 디자인의 일관성을 만들어 줍니다.
+            </p>
+          </section>
+
+          <section id="seo-howto" aria-label="사용 방법">
+            <h2>생성기 사용 방법(권장 흐름)</h2>
+            <ol>
+              <li><strong>기준 색 선택</strong>: 브랜드 컬러 또는 제품의 주요 강조색을 선택합니다.</li>
+              <li><strong>steps/50 포함</strong>: 필요에 따라 단계 수와 50 스텝 포함 여부를 결정합니다.</li>
+              <li><strong>prefix</strong>: `primary`, `brand`, `accent`처럼 의미 있는 네이밍을 넣습니다.</li>
+              <li><strong>대비 배경</strong>: 실제 UI 배경색과 유사한 값으로 대비를 확인합니다.</li>
+              <li><strong>미리보기 확인</strong>: 단계별 색이 너무 비슷하거나 급격히 바뀌지 않는지 확인합니다.</li>
+              <li><strong>복사/저장</strong>: CSS 변수를 복사하고 프리셋으로 저장해 재사용합니다.</li>
+            </ol>
+            <p>
+              스케일을 만들고 나면, “어떤 단계가 텍스트/배경/보더에 적당한가”를 결정하는 과정이 남습니다. 이때는
+              <a href="./contrast.html">대비 체크</a>로 조합을 빠르게 검증하고, <a href="./type.html">타이포 스케일</a>과 함께
+              본문/제목의 가독성을 함께 맞추는 것이 좋습니다.
+            </p>
+          </section>
+
+          <section id="seo-tokens" aria-label="토큰 설계">
+            <h2>CSS 변수 토큰 설계(네이밍/범위)</h2>
+            <p>
+              팔레트를 CSS 변수로 만들면, 컴포넌트 스타일은 “색 값”이 아니라 “의미”를 참조하게 됩니다. 예를 들어
+              <code class="guide-code">--primary-600</code> 같은 토큰은 구체 값이 바뀌어도 코드가 유지되는 장점이 있습니다.
+            </p>
+            <ul>
+              <li><strong>prefix 규칙</strong>: primary/secondary/success/danger처럼 역할 기반 네이밍을 추천합니다.</li>
+              <li><strong>사용 범위</strong>: :root에 두면 전역, 특정 섹션에 두면 지역 테마가 됩니다.</li>
+              <li><strong>상태 토큰</strong>: hover/active/disabled에 쓰는 단계를 미리 정하면 디자인 QA가 쉬워집니다.</li>
+              <li><strong>문서화</strong>: 어떤 단계가 어디에 쓰이는지 간단한 표/가이드가 있으면 협업이 좋아집니다.</li>
+            </ul>
+            <p>
+              토큰을 잘 설계하면 SEO 측면에서도 “문서의 일관성”이 좋아집니다. 여러 페이지에서 같은 클래스/토큰 체계를 쓰면,
+              사이트 전체가 하나의 시스템으로 보이고 유지보수도 쉬워집니다.
+            </p>
+          </section>
+
+          <section id="seo-contrast" aria-label="대비와 접근성">
+            <h2>대비(Contrast)와 접근성</h2>
+            <p>
+              팔레트는 예뻐 보여도, 대비가 부족하면 실제 UI에서 쓰기 어렵습니다. 특히 연한 배경(50~200) 위의 텍스트,
+              또는 진한 배경(700~900) 위의 버튼 텍스트는 대비 기준을 넘지 못하는 경우가 있습니다. 팔레트의 “품질”은
+              결국 실제 조합에서의 가독성으로 결정됩니다.
+            </p>
+            <ul>
+              <li><strong>본문 텍스트</strong>: 일반 텍스트 기준 AA 이상을 목표로 합니다.</li>
+              <li><strong>버튼 텍스트</strong>: 버튼 배경의 최악 구간에서도 읽히는지 확인합니다(그라디언트는 특히 주의).</li>
+              <li><strong>보더</strong>: 너무 연하면 경계가 사라지고, 너무 진하면 때처럼 보일 수 있습니다.</li>
+              <li><strong>테마</strong>: 라이트/다크에서 같은 토큰이 다르게 보일 수 있어 각각 검증합니다.</li>
+            </ul>
+            <p>
+              이 페이지의 스케일을 만든 뒤, 중요한 조합은 <a href="./contrast.html">대비 체크</a>로 검증해 “안전한 단계”를 정해두면,
+              이후 작업이 빠르고 안정적입니다.
+            </p>
+          </section>
+
+          <section id="seo-faq" aria-label="자주 묻는 질문">
+            <h2>자주 묻는 질문(FAQ)</h2>
+            <ul>
+              <li><strong>Q. 50 단계를 꼭 넣어야 하나요?</strong> A. 배경 하이라이트나 subtle 배경이 필요하면 유용합니다. 필요 없으면 제외해도 됩니다.</li>
+              <li><strong>Q. 스케일이 너무 비슷하게 느껴져요.</strong> A. 기준 색이 너무 어둡거나 채도가 낮을 수 있습니다. 밝기/채도를 조절하거나 steps를 늘려 변화를 확보해 보세요.</li>
+              <li><strong>Q. 어떤 단계가 버튼에 적당한가요?</strong> A. 보통 500~700을 배경으로 많이 쓰고, hover/active는 한 단계씩 이동합니다. 중요한 건 프로젝트 내에서 규칙을 고정하는 것입니다.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "메인", "item": "../index.html" },
+          { "@type": "ListItem", "position": 2, "name": "팔레트 생성기", "item": "./palette.html" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "50 단계를 꼭 넣어야 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "배경 하이라이트나 subtle 배경이 필요하면 유용합니다. 필요 없으면 제외해도 됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "스케일이 너무 비슷하게 느껴져요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "기준 색이 너무 어둡거나 채도가 낮을 수 있습니다. 밝기/채도를 조절하거나 steps를 늘려 변화를 확보해 보세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "어떤 단계가 버튼에 적당한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "보통 500~700을 배경으로 많이 쓰고, hover/active는 한 단계씩 이동합니다. 중요한 건 프로젝트 내에서 규칙을 고정하는 것입니다."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script src="../assets/js/hub.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/tools/palette.js" defer></script>
+    <script src="../assets/js/tools/coming-soon.js" defer></script>
+    <script src="../assets/js/hub-layout.js" defer></script>
+    <script src="../assets/js/hub-bootstrap.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>

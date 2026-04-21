@@ -149,8 +149,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="팔레트 생성기">' +
-      '<header class="page-hero">' +
-      "<h1>팔레트 생성기</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>팔레트 생성기</h2>" +
       "<p>기준 색상으로 50~900 스케일을 만들고, CSS 변수로 복사하거나 프리셋으로 저장하세요.</p>" +
       "</header>" +
       '<div class="generator">' +

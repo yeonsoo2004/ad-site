@@ -149,8 +149,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="컨테이너 계산기">' +
-      '<header class="page-hero">' +
-      "<h1>컨테이너 계산기</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>컨테이너 계산기</h2>" +
       "<p>반응형 container(max-width + padding)을 breakpoints 방식 또는 clamp 방식으로 생성합니다.</p>" +
       "</header>" +
       '<div class="generator">' +

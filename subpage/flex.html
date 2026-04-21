@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="플렉스박스 빌더 — CSS Utility Hub 도구" />
+    <title>플렉스박스 빌더 — CSS Utility Hub</title>
+
+    <!-- ================== 기본 메타 태그 (SEO) ================== -->
+    <meta name="title" content="플렉스박스 빌더 — CSS Utility Hub" />
+    <meta
+      name="description"
+      content="CSS Flexbox 컨테이너 설정(direction, wrap, justify/align, gap)을 미리보기로 확인하고 CSS를 복사/저장하는 플렉스박스 빌더."
+    />
+    <meta
+      name="keywords"
+      content="CSS Flexbox, flex-direction, flex-wrap, justify-content, align-items, gap, 레이아웃, 플렉스박스 빌더"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
+    <meta property="og:title" content="플렉스박스 빌더 — CSS Utility Hub" />
+    <meta
+      property="og:description"
+      content="Flexbox 컨테이너 정렬/간격/줄바꿈을 미리보기로 확인하고 결과 CSS를 복사할 수 있는 플렉스박스 빌더."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="subpage/flex.html" />
+    <meta property="og:image" content="assets/images/icon/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="CSS Utility Hub" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="플렉스박스 빌더 — CSS Utility Hub" />
+    <meta
+      name="twitter:description"
+      content="CSS Flexbox 컨테이너 설정을 미리보고 CSS를 복사하세요. direction/wrap/justify/align/gap 지원."
+    />
+    <meta name="twitter:image" content="assets/images/icon/favicon.png" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
+    <meta name="language" content="ko" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="subpage/flex.html" />
+
+    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <link rel="icon" href="../assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/icon/favicon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/hub.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      window.__HUB_PAGE__ = { tool: "flex" };
+    </script>
+  </head>
+  <body>
+    <div id="hub-root">
+      <div class="seo-wrap">
+        <article class="seo-doc" aria-label="플렉스박스 빌더 도구 설명 문서">
+          <h1>CSS Flexbox 빌더: 정렬, 간격, 줄바꿈을 빠르게 설계하고 실전 레이아웃에 적용하기</h1>
+          <p>
+            Flexbox는 UI 레이아웃에서 가장 자주 쓰이는 도구 중 하나입니다. 버튼 그룹, 헤더 네비게이션, 카드
+            리스트, 태그/칩, 툴바, 폼 필드 정렬 등 “한 줄 또는 한 묶음”을 정리할 때 특히 강력합니다. 이
+            페이지의 생성기는 <strong>display:flex</strong> 컨테이너의 핵심 속성들을 조합해 미리보기로
+            확인하고, 바로 복사해 사용할 수 있도록 돕습니다. 정렬이 헷갈릴 때는 눈으로 확인하면서 값을 바꾸는
+            방식이 가장 빠릅니다.
+          </p>
+
+          <nav class="seo-toc" aria-label="문서 목차">
+            <div class="seo-toc__title">목차</div>
+            <ol>
+              <li><a href="#seo-flex-why">Flexbox를 언제 쓰는가</a></li>
+              <li><a href="#seo-axis">주축/교차축 개념: 정렬이 헷갈리는 이유</a></li>
+              <li><a href="#seo-flow">생성기 사용 방법(권장 흐름)</a></li>
+              <li><a href="#seo-properties">핵심 속성 정리(display, direction, wrap, align/justify, gap)</a></li>
+              <li><a href="#seo-patterns">실전 패턴: 자주 쓰는 레이아웃 예시</a></li>
+              <li><a href="#seo-faq">자주 묻는 질문(FAQ)</a></li>
+            </ol>
+          </nav>
+
+          <section id="seo-flex-why" aria-label="Flexbox 사용 시점">
+            <h2>Flexbox를 언제 쓰는가</h2>
+            <p>
+              Flexbox는 “아이템들의 흐름”을 다루는 레이아웃 모델입니다. Grid가 2차원(행/열) 레이아웃에
+              강하다면, Flexbox는 1차원(한 축 중심) 정렬에 강합니다. 그래서 UI 컴포넌트 단위에서
+              <strong>정렬</strong>과 <strong>간격</strong>을 빠르게 맞추는 데 적합합니다.
+            </p>
+            <ul>
+              <li><strong>툴바/헤더</strong>: 좌측/우측 영역 분리, 버튼 정렬</li>
+              <li><strong>버튼 그룹</strong>: 동일 높이, 간격(gap), 줄바꿈(wrap)</li>
+              <li><strong>카드 목록</strong>: 한 줄 정렬 + wrap으로 반응형 구성</li>
+              <li><strong>폼</strong>: 라벨/입력/버튼을 같은 베이스라인으로 정렬</li>
+            </ul>
+            <div class="seo-note">
+              <p>
+                추천: 페이지 전체 구조(섹션 배치)가 필요하면 <a href="./grid.html">그리드 빌더</a>를 먼저 잡고,
+                컴포넌트 내부 정렬은 Flexbox로 마무리하면 가장 빠르게 깔끔해집니다.
+              </p>
+            </div>
+          </section>
+
+          <section id="seo-axis" aria-label="축 개념">
+            <h2>주축/교차축 개념: 정렬이 헷갈리는 이유</h2>
+            <p>
+              Flexbox가 어렵게 느껴지는 가장 큰 이유는 ‘정렬 속성 이름’ 때문입니다. 정렬은 “가로/세로”가 아니라
+              <strong>주축(main axis)</strong>과 <strong>교차축(cross axis)</strong> 기준으로 동작합니다.
+              그리고 주축은 <code class="guide-code">flex-direction</code>에 의해 바뀝니다.
+            </p>
+            <ul>
+              <li><strong>row</strong>: 주축=가로, 교차축=세로 → justify-content는 가로, align-items는 세로</li>
+              <li><strong>column</strong>: 주축=세로, 교차축=가로 → justify-content는 세로, align-items는 가로</li>
+            </ul>
+            <p>
+              따라서 “가로 가운데”를 원할 때도 direction이 column이면 justify가 아니라 align을 조절해야 합니다.
+              생성기의 미리보기는 이 혼란을 줄이기 위해, 값을 바꾸면 즉시 결과를 보여 주는 방식으로 설계되어 있습니다.
+            </p>
+          </section>
+
+          <section id="seo-flow" aria-label="사용 흐름">
+            <h2>생성기 사용 방법(권장 흐름)</h2>
+            <ol>
+              <li><strong>direction 설정</strong>: row/column 중 아이템 흐름을 먼저 정합니다.</li>
+              <li><strong>wrap 결정</strong>: 한 줄 유지인지, 줄바꿈으로 반응형을 만들지 결정합니다.</li>
+              <li><strong>gap</strong>: 아이템 간 간격을 먼저 통일하면 전체가 정돈됩니다.</li>
+              <li><strong>justify/align</strong>: 남는 공간을 어떻게 배치할지 정렬을 잡습니다.</li>
+              <li><strong>미리보기 확인</strong>: 컨테이너와 아이템이 실제 목적에 맞게 정렬되는지 확인합니다.</li>
+              <li><strong>복사/저장</strong>: CSS를 복사하고, 자주 쓰는 조합은 프리셋으로 저장합니다.</li>
+            </ol>
+            <p>
+              레이아웃이 어색하면 “정렬”을 먼저 바꾸기보다 <strong>gap과 wrap</strong>부터 점검하는 것이 좋습니다.
+              많은 경우 문제는 중앙 정렬이 아니라 ‘간격이 들쭉날쭉’해서 생깁니다.
+            </p>
+          </section>
+
+          <section id="seo-properties" aria-label="핵심 속성">
+            <h2>핵심 속성 정리(display, direction, wrap, align/justify, gap)</h2>
+            <p>
+              Flexbox 컨테이너에서 자주 쓰는 속성은 제한적입니다. 이 속성들을 목적별로 이해하면 외우지 않아도
+              빠르게 조합할 수 있습니다.
+            </p>
+            <ul>
+              <li><strong>display</strong>: flex를 켭니다. (컨테이너에서만)</li>
+              <li><strong>flex-direction</strong>: row/column(그리고 reverse)를 결정합니다.</li>
+              <li><strong>flex-wrap</strong>: nowrap/wrap으로 줄바꿈을 제어합니다.</li>
+              <li><strong>gap</strong>: 아이템 간 간격. margin으로 간격을 쌓는 것보다 유지보수에 유리합니다.</li>
+              <li><strong>justify-content</strong>: 주축 방향 정렬(시작/끝/가운데/space-between 등)</li>
+              <li><strong>align-items</strong>: 교차축 방향 정렬(세로 중앙, baseline 등)</li>
+            </ul>
+            <p>
+              실무에서는 아이템 개별 크기나 정렬을 위해 <code class="guide-code">flex</code>,
+              <code class="guide-code">flex-grow</code>, <code class="guide-code">flex-basis</code>를
+              추가로 사용합니다. 생성기에서 기본 컨테이너 규칙을 잡고, 아이템은 컴포넌트에 맞게 확장하면 좋습니다.
+            </p>
+          </section>
+
+          <section id="seo-patterns" aria-label="실전 패턴">
+            <h2>실전 패턴: 자주 쓰는 레이아웃 예시</h2>
+            <h3>1) 좌우 정렬 툴바</h3>
+            <ul>
+              <li><strong>추천</strong>: row + space-between + center + gap</li>
+              <li><strong>포인트</strong>: 좌측은 로고/타이틀, 우측은 액션 버튼 묶음</li>
+            </ul>
+            <h3>2) 버튼/칩 리스트(줄바꿈)</h3>
+            <ul>
+              <li><strong>추천</strong>: row + wrap + flex-start + gap</li>
+              <li><strong>포인트</strong>: wrap일 때는 gap이 필수(줄 간 간격 안정)</li>
+            </ul>
+            <h3>3) 세로 정렬 카드(상단/하단 액션)</h3>
+            <ul>
+              <li><strong>추천</strong>: column + space-between + stretch</li>
+              <li><strong>포인트</strong>: 카드 높이가 일정할 때 “하단 버튼 고정”에 유용</li>
+            </ul>
+            <p>
+              Flexbox는 “정렬”의 도구이면서도 “리듬”의 도구입니다. 같은 규칙을 반복 적용하면 UI가 통일감 있게
+              보이고, 반응형에서도 깨짐이 줄어듭니다. 컨테이너 폭은 <a href="./container.html">컨테이너 계산기</a>로,
+              간격 규칙은 <a href="./spacing.html">스페이싱 스케일</a>로 같이 맞추면 더 빠르게 정리됩니다.
+            </p>
+          </section>
+
+          <section id="seo-faq" aria-label="자주 묻는 질문">
+            <h2>자주 묻는 질문(FAQ)</h2>
+            <ul>
+              <li><strong>Q. align-items와 align-content는 뭐가 다른가요?</strong> A. align-items는 “각 줄의 아이템” 정렬이고, align-content는 wrap으로 여러 줄이 생겼을 때 “줄 묶음 전체” 정렬입니다.</li>
+              <li><strong>Q. 왜 gap 대신 margin을 쓰면 안 되나요?</strong> A. 꼭 안 되는 것은 아니지만, margin은 마지막 아이템 처리 등 예외가 생기기 쉽습니다. gap은 컨테이너에서 규칙을 한 번에 관리할 수 있어 유지보수에 유리합니다.</li>
+              <li><strong>Q. 가운데 정렬이 안 될 때 가장 먼저 볼 것은?</strong> A. flex-direction을 먼저 확인하세요. row/column에 따라 justify/align이 담당하는 축이 바뀝니다.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "메인", "item": "../index.html" },
+          { "@type": "ListItem", "position": 2, "name": "플렉스박스 빌더", "item": "./flex.html" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "align-items와 align-content는 뭐가 다른가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "align-items는 각 줄의 아이템 정렬이고, align-content는 wrap으로 여러 줄이 생겼을 때 줄 묶음 전체 정렬입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "왜 gap 대신 margin을 쓰면 안 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "margin은 마지막 아이템 처리 등 예외가 생기기 쉽습니다. gap은 컨테이너에서 규칙을 한 번에 관리할 수 있어 유지보수에 유리합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "가운데 정렬이 안 될 때 가장 먼저 볼 것은?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "flex-direction을 먼저 확인하세요. row/column에 따라 justify-content와 align-items가 담당하는 축이 바뀝니다."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script src="../assets/js/hub.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/tools/flex.js" defer></script>
+    <script src="../assets/js/tools/coming-soon.js" defer></script>
+    <script src="../assets/js/hub-layout.js" defer></script>
+    <script src="../assets/js/hub-bootstrap.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>

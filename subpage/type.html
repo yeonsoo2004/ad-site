@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="타이포 스케일 — CSS Utility Hub 도구" />
+    <title>타이포 스케일 — CSS Utility Hub</title>
+
+    <!-- ================== 기본 메타 태그 (SEO) ================== -->
+    <meta name="title" content="타이포 스케일 — CSS Utility Hub" />
+    <meta
+      name="description"
+      content="폰트 크기/라인하이트/계층 구조를 기반으로 타이포그래피 스케일을 만들고, 제목/본문 스타일을 미리보기로 확인한 뒤 CSS 변수/스타일로 복사하는 타이포 스케일 도구."
+    />
+    <meta
+      name="keywords"
+      content="typography scale, type scale, 폰트 스케일, font-size, line-height, 디자인 시스템, 타이포그래피, CSS variables"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
+    <meta property="og:title" content="타이포 스케일 — CSS Utility Hub" />
+    <meta
+      property="og:description"
+      content="타이포 스케일을 만들고 제목/본문 계층을 미리보기로 확인한 뒤 CSS 변수/스타일을 복사하세요."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="subpage/type.html" />
+    <meta property="og:image" content="assets/images/icon/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="CSS Utility Hub" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="타이포 스케일 — CSS Utility Hub" />
+    <meta
+      name="twitter:description"
+      content="타이포 스케일 생성기. 폰트 크기/라인하이트 계층을 만들고 CSS 변수/스타일을 복사하세요."
+    />
+    <meta name="twitter:image" content="assets/images/icon/favicon.png" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
+    <meta name="language" content="ko" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="subpage/type.html" />
+
+    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <link rel="icon" href="../assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/icon/favicon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/hub.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      window.__HUB_PAGE__ = { tool: "type" };
+    </script>
+  </head>
+  <body>
+    <div id="hub-root">
+      <div class="seo-wrap">
+        <article class="seo-doc" aria-label="타이포 스케일 도구 설명 문서">
+          <h1>타이포 스케일 생성기: 모듈러 스케일로 --text-* 토큰과 유틸 클래스를 만드는 실전 가이드</h1>
+          <p>
+            타이포그래피는 UI의 품질을 가장 빠르게 바꾸는 요소입니다. 같은 레이아웃이라도 글자 크기, 줄 높이,
+            자간(letter-spacing) 규칙이 정리되어 있으면 화면이 “제품처럼” 보입니다. 이 페이지의 타이포 스케일
+            도구는 모듈러 스케일(modular scale)을 기반으로 폰트 사이즈 토큰(--text-*)과 유틸 클래스를 자동
+            생성해 줍니다. 또한 static(rem) 방식과 fluid(clamp/calc) 방식 중 원하는 운영 방식을 선택할 수 있습니다.
+          </p>
+
+          <nav class="seo-toc" aria-label="문서 목차">
+            <div class="seo-toc__title">목차</div>
+            <ol>
+              <li><a href="#seo-type-why">타이포 스케일이 중요한 이유</a></li>
+              <li><a href="#seo-modular">모듈러 스케일 이해하기(base/ratio/steps)</a></li>
+              <li><a href="#seo-howto">생성기 사용 방법(권장 흐름)</a></li>
+              <li><a href="#seo-static-fluid">Static vs Fluid 타이포(언제 무엇을 쓸까)</a></li>
+              <li><a href="#seo-lh-tracking">line-height와 자간 규칙</a></li>
+              <li><a href="#seo-faq">자주 묻는 질문(FAQ)</a></li>
+            </ol>
+          </nav>
+
+          <section id="seo-type-why" aria-label="타이포의 역할">
+            <h2>타이포 스케일이 중요한 이유</h2>
+            <p>
+              타이포는 정보 구조를 만듭니다. 제목/부제/본문/보조 텍스트의 크기와 간격이 논리적으로 이어지면,
+              사용자는 스캔하듯 내용을 읽을 수 있습니다. 반대로 글자 크기가 제각각이면 읽기 흐름이 끊기고, 화면이
+              산만해 보입니다.
+            </p>
+            <ul>
+              <li><strong>계층</strong>: H1/H2/H3와 본문의 관계가 명확해집니다.</li>
+              <li><strong>가독성</strong>: line-height 규칙이 있으면 긴 문장도 편하게 읽힙니다.</li>
+              <li><strong>일관성</strong>: 페이지가 늘어나도 같은 톤으로 유지됩니다.</li>
+              <li><strong>협업</strong>: 토큰 이름(--text-lg 등)으로 소통하면 빠릅니다.</li>
+            </ul>
+            <div class="seo-note">
+              <p>
+                추천: 타이포 스케일을 먼저 정하고, 그 다음에 스페이싱을 맞추면 UI 리듬이 훨씬 안정적으로 잡힙니다.
+                간격 규칙은 <a href="./spacing.html">스페이싱 스케일</a>에서 같이 맞출 수 있습니다.
+              </p>
+            </div>
+          </section>
+
+          <section id="seo-modular" aria-label="모듈러 스케일">
+            <h2>모듈러 스케일 이해하기(base/ratio/steps)</h2>
+            <p>
+              모듈러 스케일은 base(기준 크기)에 ratio(비율)를 곱해 단계적으로 크기를 만드는 방식입니다. 예를 들어
+              base가 16px이고 ratio가 1.2라면, 다음 단계는 19.2px, 그 다음은 23.04px…처럼 증가합니다. 이 방식은
+              “감으로” 크기를 고르는 것보다 규칙을 만들기 쉽고, 계층이 자연스럽게 이어지기 때문에 UI에서 자주 사용됩니다.
+            </p>
+            <ul>
+              <li><strong>base</strong>: 본문 크기의 출발점(보통 14~18px 범위)</li>
+              <li><strong>ratio</strong>: 크기 증가의 리듬(1.125~1.333 사이가 흔함)</li>
+              <li><strong>steps up/down</strong>: 위로 몇 단계(헤딩), 아래로 몇 단계(보조 텍스트)를 만들지</li>
+              <li><strong>prefix</strong>: 토큰/클래스 네이밍 규칙(예: text, fs 등)</li>
+            </ul>
+            <p>
+              ratio가 너무 크면 헤딩이 과하게 커지고, 너무 작으면 계층 차이가 약해집니다. 프로젝트의 정보 밀도(콘텐츠 길이)에 맞게 조정하는 것이 중요합니다.
+            </p>
+          </section>
+
+          <section id="seo-howto" aria-label="사용 방법">
+            <h2>생성기 사용 방법(권장 흐름)</h2>
+            <ol>
+              <li><strong>prefix 설정</strong>: text, type 등 프로젝트 규칙에 맞게 선택합니다.</li>
+              <li><strong>모드 선택</strong>: Static(rem) 또는 Fluid(clamp 기반) 중 하나를 고릅니다.</li>
+              <li><strong>base/ratio</strong>: 본문 기준 크기와 증가 리듬을 잡습니다.</li>
+              <li><strong>steps</strong>: 헤딩/보조 텍스트 범위를 커버할 만큼 단계 수를 정합니다.</li>
+              <li><strong>line-height</strong>: base/tight 값을 정해 읽기 리듬을 만듭니다.</li>
+              <li><strong>복사/저장</strong>: 출력 CSS를 복사하고 프리셋으로 저장합니다.</li>
+            </ol>
+            <p>
+              타이포는 색 대비와도 연결됩니다. 작은 텍스트는 더 높은 대비가 필요할 수 있으니,
+              <a href="./contrast.html">대비 체크</a>로 본문/보조 텍스트의 가독성을 함께 확인하는 습관이 좋습니다.
+            </p>
+          </section>
+
+          <section id="seo-static-fluid" aria-label="Static vs Fluid">
+            <h2>Static vs Fluid 타이포(언제 무엇을 쓸까)</h2>
+            <p>
+              Static(rem)은 브레이크포인트에 따라 값이 고정되며 이해하기 쉽습니다. Fluid(clamp)는 뷰포트에 따라
+              크기가 부드럽게 변해, 화면이 커질수록 타이포도 자연스럽게 확장됩니다.
+            </p>
+            <ul>
+              <li><strong>Static 추천</strong>: 팀 규모가 크고, 유지보수를 단순하게 하고 싶을 때</li>
+              <li><strong>Fluid 추천</strong>: 마케팅/콘텐츠 페이지에서 스케일감을 자연스럽게 만들고 싶을 때</li>
+              <li><strong>검증</strong>: 극단적인 화면 크기에서 너무 크거나 작아지지 않도록 min/max를 확인</li>
+              <li><strong>일관성</strong>: Fluid를 쓰면 스페이싱도 함께 유동화할지 검토</li>
+            </ul>
+            <p>
+              Fluid를 적용할 때는 컨테이너 폭과 함께 검증하는 것이 좋습니다. <a href="./container.html">컨테이너 계산기</a>로
+              주요 폭 규칙을 잡아 두면, 타이포의 변화가 더 안정적으로 느껴집니다.
+            </p>
+          </section>
+
+          <section id="seo-lh-tracking" aria-label="line-height와 자간">
+            <h2>line-height와 자간 규칙</h2>
+            <p>
+              글자 크기만 바꿔서는 좋은 타이포가 되지 않습니다. line-height는 문장의 호흡을 만들고, 자간은 제목의
+              인상을 결정합니다. 일반적으로 본문은 여유 있는 line-height(예: 1.5~1.75), 헤딩은 타이트한 line-height(예: 1.1~1.3)를
+              사용하는 경우가 많습니다.
+            </p>
+            <ul>
+              <li><strong>본문</strong>: line-height를 높여 읽기 쉬움 확보</li>
+              <li><strong>헤딩</strong>: 타이트하게 두어 덩어리감을 만들기</li>
+              <li><strong>자간</strong>: 큰 헤딩은 약간 줄이고(tracking-tight), 작은 글자는 기본으로 두기</li>
+              <li><strong>줄 길이</strong>: 너무 긴 줄은 읽기 어렵기 때문에 컨테이너 폭과 함께 조절</li>
+            </ul>
+            <p>
+              타이포가 정리되면, 그 다음은 여백이 중요합니다. 타이포와 스페이싱을 함께 맞추면 “보기 좋은 UI”가 빠르게 완성됩니다.
+            </p>
+          </section>
+
+          <section id="seo-faq" aria-label="자주 묻는 질문">
+            <h2>자주 묻는 질문(FAQ)</h2>
+            <ul>
+              <li><strong>Q. ratio는 어떤 값을 쓰는 게 좋나요?</strong> A. 본문 중심 UI는 1.125~1.25, 강조 헤딩이 필요한 랜딩은 1.25~1.333 범위를 많이 씁니다.</li>
+              <li><strong>Q. steps를 많이 늘리면 더 좋나요?</strong> A. 많아지면 관리가 어려워집니다. 실제로 쓰는 단계만 남기는 것이 유지보수에 좋습니다.</li>
+              <li><strong>Q. fluid가 항상 더 좋은가요?</strong> A. 아닙니다. 팀/프로젝트 성격에 따라 static이 더 안정적일 수 있습니다. 중요한 건 규칙의 일관성입니다.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "메인", "item": "../index.html" },
+          { "@type": "ListItem", "position": 2, "name": "타이포 스케일", "item": "./type.html" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "ratio는 어떤 값을 쓰는 게 좋나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "본문 중심 UI는 1.125~1.25, 강조 헤딩이 필요한 랜딩은 1.25~1.333 범위를 많이 씁니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "steps를 많이 늘리면 더 좋나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "많아지면 관리가 어려워집니다. 실제로 쓰는 단계만 남기는 것이 유지보수에 좋습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "fluid가 항상 더 좋은가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "항상 더 좋은 것은 아닙니다. 팀/프로젝트 성격에 따라 static이 더 안정적일 수 있고, 중요한 건 규칙의 일관성입니다."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script src="../assets/js/hub.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/tools/type.js" defer></script>
+    <script src="../assets/js/tools/coming-soon.js" defer></script>
+    <script src="../assets/js/hub-layout.js" defer></script>
+    <script src="../assets/js/hub-bootstrap.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>

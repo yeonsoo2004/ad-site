@@ -115,8 +115,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="그리드 빌더">' +
-      '<header class="page-hero">' +
-      "<h1>그리드 빌더</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>그리드 빌더</h2>" +
       "<p>CSS Grid 레이아웃을 미리보고, 컨테이너 CSS를 바로 복사하거나 프리셋으로 저장하세요.</p>" +
       "</header>" +
       '<div class="generator">' +

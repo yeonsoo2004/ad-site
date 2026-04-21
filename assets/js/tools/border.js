@@ -148,8 +148,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="보더/라디우스">' +
-      '<header class="page-hero">' +
-      "<h1>보더/라디우스</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>보더/라디우스</h2>" +
       "<p>border, border-radius(모서리 개별 포함), outline을 조절하고 CSS를 복사/저장하세요.</p>" +
       "</header>" +
       '<div class="generator">' +

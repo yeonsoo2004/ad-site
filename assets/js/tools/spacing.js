@@ -139,8 +139,8 @@
   function template() {
     return (
       '<section class="tool-root" aria-label="스페이싱 스케일">' +
-      '<header class="page-hero">' +
-      "<h1>스페이싱 스케일</h1>" +
+      '<header class="page-hero page-hero--compact">' +
+      "<h2>스페이싱 스케일</h2>" +
       "<p>스페이싱 토큰(--space-*)과 간단한 유틸 클래스(p-/m-/gap-)를 자동 생성합니다.</p>" +
       "</header>" +
       '<div class="generator">' +

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="15가지 디자인 툴을 담는 종합 CSS 유틸리티 허브" />
+    <title>CSS Utility Hub — 도구 모음</title>
+    <link rel="icon" href="assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="assets/images/icon/favicon.png" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/hub.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      window.__HUB_PAGE__ = { spa: true };
+    </script>
+  </head>
+  <body>
+    <div id="hub-root"></div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script src="assets/js/hub.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/tools/glass.js" defer></script>
+    <script src="assets/js/tools/neumorphism.js" defer></script>
+    <script src="assets/js/tools/gradient.js" defer></script>
+    <script src="assets/js/tools/mesh.js" defer></script>
+    <script src="assets/js/tools/pattern.js" defer></script>
+    <script src="assets/js/tools/grid.js" defer></script>
+    <script src="assets/js/tools/flex.js" defer></script>
+    <script src="assets/js/tools/spacing.js" defer></script>
+    <script src="assets/js/tools/container.js" defer></script>
+    <script src="assets/js/tools/type.js" defer></script>
+    <script src="assets/js/tools/palette.js" defer></script>
+    <script src="assets/js/tools/contrast.js" defer></script>
+    <script src="assets/js/tools/shadow.js" defer></script>
+    <script src="assets/js/tools/border.js" defer></script>
+    <script src="assets/js/tools/animation.js" defer></script>
+    <script src="assets/js/tools/coming-soon.js" defer></script>
+    <script src="assets/js/hub-layout.js" defer></script>
+    <script src="assets/js/hub-bootstrap.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>
+

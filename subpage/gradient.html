@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="그라디언트 메이커 — CSS Utility Hub 도구" />
+    <title>그라디언트 메이커 — CSS Utility Hub</title>
+
+    <!-- ================== 기본 메타 태그 (SEO) ================== -->
+    <meta name="title" content="그라디언트 메이커 — CSS Utility Hub" />
+    <meta
+      name="description"
+      content="CSS linear/radial/conic 그라디언트를 만들고 스탑/각도/위치를 조절해 미리보기로 확인한 뒤 CSS를 복사/저장하는 그라디언트 메이커."
+    />
+    <meta
+      name="keywords"
+      content="CSS gradient, linear-gradient, radial-gradient, conic-gradient, color stop, angle, 배경 디자인, 그라디언트 생성기"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
+    <meta property="og:title" content="그라디언트 메이커 — CSS Utility Hub" />
+    <meta
+      property="og:description"
+      content="Linear/Radial/Conic 그라디언트를 만들고 CSS를 복사하세요. 스탑(색/위치)과 각도/중심 조절 지원."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="subpage/gradient.html" />
+    <meta property="og:image" content="assets/images/icon/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="CSS Utility Hub" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="그라디언트 메이커 — CSS Utility Hub" />
+    <meta
+      name="twitter:description"
+      content="CSS linear/radial/conic 그라디언트 생성기. 미리보기로 확인하고 결과 CSS를 복사하세요."
+    />
+    <meta name="twitter:image" content="assets/images/icon/favicon.png" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
+    <meta name="language" content="ko" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="subpage/gradient.html" />
+
+    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <link rel="icon" href="../assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/icon/favicon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/hub.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      window.__HUB_PAGE__ = { tool: "gradient" };
+    </script>
+  </head>
+  <body>
+    <div id="hub-root">
+      <div class="seo-wrap">
+        <article class="seo-doc" aria-label="그라디언트 메이커 도구 설명 문서">
+          <h1>CSS 그라디언트 메이커: linear/radial/conic를 조합해 배경을 설계하는 실전 가이드</h1>
+          <p>
+            그라디언트(gradient)는 단순한 배경 장식이 아니라, 섹션의 깊이감, 버튼의 주목성, 카드의 레이어감,
+            그리고 브랜드 톤을 만들어 주는 핵심 요소입니다. 이 페이지의 생성기는
+            <strong>linear-gradient</strong>, <strong>radial-gradient</strong>,
+            <strong>conic-gradient</strong>를 빠르게 만들고, 스탑(stop) 색상과 위치를 조절해 원하는 분위기를
+            얻을 수 있도록 돕습니다. 생성된 CSS는 바로 복사해 프로젝트에 붙여 넣을 수 있습니다.
+          </p>
+
+          <nav class="seo-toc" aria-label="문서 목차">
+            <div class="seo-toc__title">목차</div>
+            <ol>
+              <li><a href="#seo-grad-why">그라디언트가 중요한 이유</a></li>
+              <li><a href="#seo-types">세 가지 타입 이해(Linear/Radial/Conic)</a></li>
+              <li><a href="#seo-howto">생성기 사용 방법(권장 흐름)</a></li>
+              <li><a href="#seo-stops">스탑(색/위치) 설계 팁</a></li>
+              <li><a href="#seo-usage">실전 적용: 배경/오버레이/버튼/텍스트</a></li>
+              <li><a href="#seo-faq">자주 묻는 질문(FAQ)</a></li>
+            </ol>
+          </nav>
+
+          <section id="seo-grad-why" aria-label="그라디언트의 역할">
+            <h2>그라디언트가 중요한 이유</h2>
+            <p>
+              단색 배경은 안정적이지만, 정보 계층을 만들기 어렵습니다. 그라디언트는 섹션 간의 구분, 시선 이동,
+              그리고 “브랜드 감성”을 빠르게 만들어 줍니다. 특히 다크 UI에서는 미세한 색 변화가 레이어를 분리하는 데
+              도움이 되고, 라이트 UI에서는 공간감을 만들기 좋습니다.
+            </p>
+            <ul>
+              <li><strong>레이어감</strong>: 카드/패널이 떠 있는 느낌을 강화합니다.</li>
+              <li><strong>포커스</strong>: CTA 영역에 시선을 모으는 배경을 만들 수 있습니다.</li>
+              <li><strong>브랜딩</strong>: 같은 색도 배치 방식에 따라 분위기가 크게 달라집니다.</li>
+              <li><strong>재사용</strong>: 자주 쓰는 조합을 프리셋으로 저장해 반복 적용할 수 있습니다.</li>
+            </ul>
+          </section>
+
+          <section id="seo-types" aria-label="타입 이해">
+            <h2>세 가지 타입 이해(Linear/Radial/Conic)</h2>
+            <p>
+              CSS 그라디언트는 기본적으로 3가지 타입을 많이 씁니다. 타입에 따라 “느낌”이 확 달라지므로,
+              목적에 맞게 고르면 작업 시간이 줄어듭니다.
+            </p>
+            <ul>
+              <li><strong>Linear</strong>: 방향(각도) 기반. 섹션 배경, 버튼, 배너에 가장 흔히 사용됩니다.</li>
+              <li><strong>Radial</strong>: 중심에서 퍼지는 빛. 스포트라이트/블롭/배경 포인트에 좋습니다.</li>
+              <li><strong>Conic</strong>: 회전하는 색 분포. 현대적인 배경, 링/차트 느낌, 하이라이트에 사용됩니다.</li>
+            </ul>
+            <div class="seo-note">
+              <p>
+                추천: “배경 전체”는 Linear로 안정적으로 만들고, 포인트는 Radial을 얹어 깊이를 주는 방식이 많이 쓰입니다.
+                더 강한 분위기는 <a href="./mesh.html">메쉬 그라디언트</a> 도구로 확장할 수 있습니다.
+              </p>
+            </div>
+          </section>
+
+          <section id="seo-howto" aria-label="사용 방법">
+            <h2>생성기 사용 방법(권장 흐름)</h2>
+            <ol>
+              <li><strong>타입 선택</strong>: Linear/Radial/Conic 중 목적에 맞게 고릅니다.</li>
+              <li><strong>스탑 설정</strong>: 2~4개로 시작해 색과 위치를 잡습니다.</li>
+              <li><strong>방향/중심</strong>: Linear는 각도, Radial은 size/position, Conic은 from 값을 조절합니다.</li>
+              <li><strong>미리보기 검증</strong>: 텍스트가 올라갈 배경이라면 가독성을 같이 확인합니다.</li>
+              <li><strong>복사/저장</strong>: CSS를 복사하고, 좋은 조합은 프리셋으로 저장합니다.</li>
+            </ol>
+            <p>
+              배경 위에 텍스트가 올라간다면 대비를 반드시 확인하세요. 아름다운 그라디언트도 대비가 낮으면 읽기 어려워집니다.
+              <a href="./contrast.html">대비 체크</a>로 주요 구간(가장 밝은 지점/가장 어두운 지점)에서 가독성을 점검하는 습관이 좋습니다.
+            </p>
+          </section>
+
+          <section id="seo-stops" aria-label="스탑 설계">
+            <h2>스탑(색/위치) 설계 팁</h2>
+            <p>
+              스탑은 그라디언트의 품질을 결정합니다. 같은 두 색이라도 위치와 개수에 따라 ‘촌스러움’과 ‘세련됨’이 갈립니다.
+              아래 규칙만 지켜도 대부분의 그라디언트가 안정적으로 보입니다.
+            </p>
+            <ul>
+              <li><strong>개수</strong>: 2개로 시작해 3~4개까지만 늘립니다(너무 많으면 지저분해질 수 있음).</li>
+              <li><strong>간격</strong>: 스탑 사이 간격을 극단적으로 좁히면 밴딩이 보일 수 있습니다.</li>
+              <li><strong>톤 이동</strong>: 채도만 올리기보다 명도 차이를 함께 주면 깊이가 생깁니다.</li>
+              <li><strong>중간색</strong>: 두 색이 너무 멀면 중간 톤을 하나 추가해 자연스럽게 연결합니다.</li>
+            </ul>
+            <p>
+              팔레트가 필요하면 <a href="./palette.html">팔레트 생성기</a>로 스케일을 만든 뒤, 인접한 단계(예: 500→700)를 사용하면
+              톤이 자연스럽게 연결됩니다.
+            </p>
+          </section>
+
+          <section id="seo-usage" aria-label="실전 적용">
+            <h2>실전 적용: 배경/오버레이/버튼/텍스트</h2>
+            <h3>1) 섹션 배경</h3>
+            <ul>
+              <li><strong>추천</strong>: Linear + 약한 Radial 포인트</li>
+              <li><strong>포인트</strong>: 반복되는 섹션이라면 강도를 낮추고, 스페이싱으로 리듬을 만듭니다.</li>
+            </ul>
+            <h3>2) 카드/패널 오버레이</h3>
+            <ul>
+              <li><strong>추천</strong>: 얕은 그라디언트 + 보더/섀도우 조합</li>
+              <li><strong>연계</strong>: <a href="./glass.html">글래스</a>와 같이 쓰면 레이어감이 좋아집니다.</li>
+            </ul>
+            <h3>3) CTA 버튼</h3>
+            <ul>
+              <li><strong>추천</strong>: 두 단계 색만으로 간결하게, 텍스트 대비는 AA 이상 확인</li>
+              <li><strong>포인트</strong>: hover에서 살짝 밝아지도록 하면 고급스럽습니다.</li>
+            </ul>
+            <p>
+              그라디언트는 “많이 넣을수록 좋은 디자인”이 아닙니다. 적절한 한두 곳에만 쓰고, 나머지는 여백과 타이포로 정리하면 더 세련됩니다.
+            </p>
+          </section>
+
+          <section id="seo-faq" aria-label="자주 묻는 질문">
+            <h2>자주 묻는 질문(FAQ)</h2>
+            <ul>
+              <li><strong>Q. 밴딩(banding)이 보여요.</strong> A. 스탑 간격이 너무 좁거나 색 차이가 큰 경우입니다. 중간 톤을 추가하거나, 배경 위에 약한 노이즈/패턴을 얹어 완화할 수 있습니다.</li>
+              <li><strong>Q. 텍스트가 안 읽혀요.</strong> A. 그라디언트의 가장 밝은/어두운 구간에서 대비가 무너질 수 있습니다. 오버레이를 추가하거나 색/명도를 조정해 보세요.</li>
+              <li><strong>Q. 어떤 타입이 가장 무난한가요?</strong> A. 대부분의 섹션 배경은 Linear가 가장 무난합니다. 포인트는 Radial, 현대적인 느낌은 Conic을 추천합니다.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "메인", "item": "../index.html" },
+          { "@type": "ListItem", "position": 2, "name": "그라디언트 메이커", "item": "./gradient.html" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "밴딩(banding)이 보여요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "스탑 간격이 너무 좁거나 색 차이가 큰 경우입니다. 중간 톤을 추가하거나 약한 노이즈/패턴을 얹어 완화할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "텍스트가 안 읽혀요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "그라디언트의 가장 밝은/어두운 구간에서 대비가 무너질 수 있습니다. 오버레이를 추가하거나 색/명도를 조정해 보세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "어떤 타입이 가장 무난한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "대부분의 섹션 배경은 Linear가 가장 무난합니다. 포인트는 Radial, 현대적인 느낌은 Conic을 추천합니다."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script src="../assets/js/hub.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/tools/gradient.js" defer></script>
+    <script src="../assets/js/tools/coming-soon.js" defer></script>
+    <script src="../assets/js/hub-layout.js" defer></script>
+    <script src="../assets/js/hub-bootstrap.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>

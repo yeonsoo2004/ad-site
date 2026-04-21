@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="패턴 생성기 — CSS Utility Hub 도구" />
+    <title>패턴 생성기 — CSS Utility Hub</title>
+
+    <!-- ================== 기본 메타 태그 (SEO) ================== -->
+    <meta name="title" content="패턴 생성기 — CSS Utility Hub" />
+    <meta
+      name="description"
+      content="CSS 패턴(도트, 스트라이프, 체크 등) 배경을 생성하고 크기/간격/색상을 조절해 미리보기로 확인한 뒤 background CSS를 복사하는 패턴 생성기."
+    />
+    <meta
+      name="keywords"
+      content="CSS pattern, 패턴 생성기, background pattern, 도트 패턴, 스트라이프, 체크, 반복 배경, 디자인 리소스"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
+    <meta property="og:title" content="패턴 생성기 — CSS Utility Hub" />
+    <meta
+      property="og:description"
+      content="도트/스트라이프/체크 등 CSS 패턴 배경을 만들고 설정값을 조절한 뒤 CSS를 복사하세요."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="subpage/pattern.html" />
+    <meta property="og:image" content="assets/images/icon/favicon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="CSS Utility Hub" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="패턴 생성기 — CSS Utility Hub" />
+    <meta
+      name="twitter:description"
+      content="CSS 패턴 생성기. 도트/스트라이프/체크 반복 배경을 만들고 결과 CSS를 복사하세요."
+    />
+    <meta name="twitter:image" content="assets/images/icon/favicon.png" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+
+    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
+    <meta name="language" content="ko" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="subpage/pattern.html" />
+
+    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <link rel="icon" href="../assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="../assets/images/icon/favicon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <link rel="stylesheet" href="../assets/css/hub.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      window.__HUB_PAGE__ = { tool: "pattern" };
+    </script>
+  </head>
+  <body>
+    <div id="hub-root">
+      <div class="seo-wrap">
+        <article class="seo-doc" aria-label="패턴 생성기 도구 설명 문서">
+          <h1>CSS 패턴 생성기: dots/stripes/grid 배경을 만들고 반복(repeating)으로 최적화하는 방법</h1>
+          <p>
+            패턴(pattern) 배경은 브랜드 톤을 유지하면서도 단색 배경의 단조로움을 줄이는 좋은 방법입니다. 특히
+            카드/섹션의 구분, 로딩 스켈레톤, 배지/라벨, 인포그래픽 같은 영역에서 “조용한 텍스처”로 많이 쓰입니다.
+            이 페이지의 패턴 생성기는 <strong>Dots</strong>, <strong>Stripes</strong>, <strong>Grid</strong>
+            패턴을 CSS만으로 만들고, 미리보기로 확인한 뒤 코드를 복사할 수 있게 해줍니다.
+          </p>
+
+          <nav class="seo-toc" aria-label="문서 목차">
+            <div class="seo-toc__title">목차</div>
+            <ol>
+              <li><a href="#seo-pattern-why">패턴 배경을 쓰는 이유</a></li>
+              <li><a href="#seo-types">Dots/Stripes/Grid 패턴의 특징</a></li>
+              <li><a href="#seo-howto">생성기 사용 방법(권장 흐름)</a></li>
+              <li><a href="#seo-repeat">반복 패턴 최적화(repeating, size, position)</a></li>
+              <li><a href="#seo-usage">실전 적용: 섹션/카드/오버레이</a></li>
+              <li><a href="#seo-faq">자주 묻는 질문(FAQ)</a></li>
+            </ol>
+          </nav>
+
+          <section id="seo-pattern-why" aria-label="패턴의 역할">
+            <h2>패턴 배경을 쓰는 이유</h2>
+            <p>
+              패턴은 “콘텐츠를 방해하지 않으면서 분위기를 만드는” 배경입니다. 그라디언트나 이미지 배경은 강한 인상을 주지만,
+              과하면 텍스트 가독성을 해치고 피로도를 높일 수 있습니다. 패턴은 작은 단위가 반복되는 형태라, 강도를 낮추면
+              거의 느껴지지 않게도 만들 수 있고, 필요할 때만 포인트로 쓸 수도 있습니다.
+            </p>
+            <ul>
+              <li><strong>브랜딩</strong>: 제품의 톤을 유지하면서 배경을 풍부하게 합니다.</li>
+              <li><strong>구분</strong>: 섹션/카드의 경계를 자연스럽게 나눌 수 있습니다.</li>
+              <li><strong>가벼움</strong>: 이미지 없이 CSS만으로 구현 가능해 관리가 쉽습니다.</li>
+              <li><strong>조절</strong>: 색/크기/밀도로 강도를 쉽게 조절할 수 있습니다.</li>
+            </ul>
+            <div class="seo-note">
+              <p>
+                추천: 텍스트가 올라가는 영역에서는 패턴의 대비를 낮추고, 필요한 경우 <a href="./glass.html">글래스</a> 같은
+                반투명 패널을 얹어 가독성을 확보하세요. 대비는 <a href="./contrast.html">대비 체크</a>로 검증할 수 있습니다.
+              </p>
+            </div>
+          </section>
+
+          <section id="seo-types" aria-label="패턴 타입">
+            <h2>Dots/Stripes/Grid 패턴의 특징</h2>
+            <p>
+              같은 배경이라도 패턴 타입에 따라 분위기가 달라집니다. 목적에 맞게 선택하면 시행착오가 줄어듭니다.
+            </p>
+            <ul>
+              <li><strong>Dots</strong>: 부드럽고 캐주얼한 느낌. 배경 노이즈처럼 쓰기 좋습니다.</li>
+              <li><strong>Stripes</strong>: 방향성이 생겨 역동적인 느낌. 배너/하이라이트에 적합합니다.</li>
+              <li><strong>Grid</strong>: 구조적이고 기술적인 느낌. 대시보드/에디터 배경에 잘 어울립니다.</li>
+            </ul>
+            <p>
+              패턴은 “시선 유도”에도 영향을 줍니다. Stripes는 방향이 있어 텍스트 배치와 충돌할 수 있으니, 각도와 대비를 낮추는 편이 안전합니다.
+            </p>
+          </section>
+
+          <section id="seo-howto" aria-label="사용 방법">
+            <h2>생성기 사용 방법(권장 흐름)</h2>
+            <ol>
+              <li><strong>타입 선택</strong>: Dots/Stripes/Grid 중 목적에 맞게 고릅니다.</li>
+              <li><strong>밀도/크기</strong>: 작은 단위가 반복될수록 더 촘촘해 보입니다.</li>
+              <li><strong>색/투명도</strong>: 배경 대비를 낮춰 “조용한 텍스처”가 되게 조절합니다.</li>
+              <li><strong>미리보기 검증</strong>: 텍스트/아이콘이 올라갈 경우 가독성을 확인합니다.</li>
+              <li><strong>복사/저장</strong>: CSS를 복사하고, 자주 쓰면 프리셋으로 저장합니다.</li>
+            </ol>
+            <p>
+              패턴을 적용할 컨테이너 폭과 여백이 정해져 있으면 더 예쁘게 보입니다. 섹션 레이아웃은
+              <a href="./container.html">컨테이너 계산기</a>와 <a href="./spacing.html">스페이싱</a>으로 먼저 정리해 보세요.
+            </p>
+          </section>
+
+          <section id="seo-repeat" aria-label="반복 최적화">
+            <h2>반복 패턴 최적화(repeating, size, position)</h2>
+            <p>
+              CSS 패턴은 보통 <strong>background-size</strong>와 <strong>background-position</strong>으로 반복 단위를 정합니다.
+              repeating-linear-gradient 같은 함수를 쓰면 한 줄로 반복을 만들 수도 있지만, 복잡한 패턴은 여러 레이어를 쌓는 방식이 더 유연합니다.
+            </p>
+            <ul>
+              <li><strong>background-size</strong>: 패턴 타일의 크기. 크면 거칠고, 작으면 섬세합니다.</li>
+              <li><strong>background-position</strong>: 시작 위치. 요소 크기에 따라 패턴이 어색하면 위치를 살짝 이동합니다.</li>
+              <li><strong>레이어 수</strong>: 필요한 최소 레이어로 유지하면 성능과 유지보수에 유리합니다.</li>
+              <li><strong>밴딩/모아레</strong>: 대비가 높고 반복이 촘촘하면 시각적 떨림이 생길 수 있어 대비를 낮춥니다.</li>
+            </ul>
+            <p>
+              “좋은 패턴”의 기준은 눈에 띄는 것이 아니라, 콘텐츠를 돋보이게 하면서도 부담스럽지 않은 것입니다. 따라서 보통은
+              투명도를 낮추고, 패턴의 크기를 조금 키워 촘촘함을 줄이면 안정적으로 보입니다.
+            </p>
+          </section>
+
+          <section id="seo-usage" aria-label="실전 적용">
+            <h2>실전 적용: 섹션/카드/오버레이</h2>
+            <h3>1) 섹션 배경</h3>
+            <ul>
+              <li><strong>추천</strong>: Dots 또는 Grid, 낮은 대비</li>
+              <li><strong>포인트</strong>: 섹션 구분이 필요할 때만 강도를 올립니다.</li>
+            </ul>
+            <h3>2) 카드 내부 텍스처</h3>
+            <ul>
+              <li><strong>추천</strong>: 매우 약한 패턴 + 보더/섀도우로 경계 보강</li>
+              <li><strong>연계</strong>: <a href="./border.html">보더/라디우스</a>, <a href="./shadow.html">섀도우</a>와 함께 쓰면 깔끔합니다.</li>
+            </ul>
+            <h3>3) 오버레이/마스크</h3>
+            <ul>
+              <li><strong>추천</strong>: Stripes를 약하게 깔고, 상단에 반투명 오버레이를 얹어 분위기 조절</li>
+              <li><strong>주의</strong>: 텍스트와 충돌하지 않도록 각도/대비를 낮춥니다.</li>
+            </ul>
+            <p>
+              패턴은 다른 배경 요소와도 잘 섞입니다. 예를 들어 <a href="./gradient.html">그라디언트</a> 위에 얕은 패턴을 얹으면
+              밴딩을 완화하고 질감을 줄 수 있습니다.
+            </p>
+          </section>
+
+          <section id="seo-faq" aria-label="자주 묻는 질문">
+            <h2>자주 묻는 질문(FAQ)</h2>
+            <ul>
+              <li><strong>Q. 패턴이 너무 튀어요.</strong> A. 대비(투명도)를 낮추고, 패턴 단위를 키워 밀도를 낮추면 대부분 해결됩니다.</li>
+              <li><strong>Q. 스크롤할 때 패턴이 흔들리는 느낌이 있어요.</strong> A. 매우 촘촘한 패턴은 모아레가 생길 수 있습니다. 크기를 키우거나 대비를 낮추는 것이 좋습니다.</li>
+              <li><strong>Q. 텍스트 가독성이 떨어져요.</strong> A. 패턴 강도를 낮추고, 필요하면 오버레이/글래스 패널로 텍스트 영역을 분리하세요.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "메인", "item": "../index.html" },
+          { "@type": "ListItem", "position": 2, "name": "패턴 생성기", "item": "./pattern.html" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "패턴이 너무 튀어요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "대비(투명도)를 낮추고 패턴 단위를 키워 밀도를 낮추면 대부분 해결됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "스크롤할 때 패턴이 흔들리는 느낌이 있어요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "매우 촘촘한 패턴은 모아레가 생길 수 있습니다. 크기를 키우거나 대비를 낮추는 것이 좋습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "텍스트 가독성이 떨어져요.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "패턴 강도를 낮추고, 필요하면 오버레이/글래스 패널로 텍스트 영역을 분리하세요."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script src="../assets/js/hub.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/tools/pattern.js" defer></script>
+    <script src="../assets/js/tools/coming-soon.js" defer></script>
+    <script src="../assets/js/hub-layout.js" defer></script>
+    <script src="../assets/js/hub-bootstrap.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
