@@ -16,6 +16,17 @@
     }
   }
 
+  function loadKakaoAdFitScript() {
+    if (window.__KAKAO_ADFIT_BA_LOADED__) return;
+    if (!document.querySelector(".kakao_ad_area")) return;
+    window.__KAKAO_ADFIT_BA_LOADED__ = true;
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = "//t1.daumcdn.net/kas/static/ba.min.js";
+    s.async = true;
+    document.head.appendChild(s);
+  }
+
   function navOptions() {
     var p = window.__HUB_PAGE__ || {};
     if (p.spa) {
@@ -29,6 +40,7 @@
 
   function boot() {
     injectShellIfNeeded();
+    loadKakaoAdFitScript();
     if (!window.HubLayout) return;
     var opt = navOptions();
     if (typeof window.HubLayout.mountSidebar === "function") {

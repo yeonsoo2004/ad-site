@@ -129,6 +129,12 @@
       "</button>" +
       "</div>" +
       "</header>" +
+      '<div class="hub-adfit">' +
+      '<ins class="kakao_ad_area" style="display:none;" ' +
+      'data-ad-unit = "DAN-jkh7ej49xA8VLGiE" ' +
+      'data-ad-width = "300" ' +
+      'data-ad-height = "250"></ins>' +
+      "</div>" +
       '<main class="hub-content" id="hub-content">' +
       '<div id="tool-container" class="tool-container" aria-live="polite"></div>' +
       "</main>" +
