@@ -1,0 +1,5 @@
+# https://css-utility-hub.netlify.app/
+User-agent: *
+Allow: /
+
+Sitemap: https://css-utility-hub.netlify.app/sitemap.xml
