@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="CSS Utility Hub 문의하기 — 서비스 관련 문의, 오류 신고, 제휴 문의 등을 남기실 수 있습니다."
+    />
+    <title>문의하기 — CSS Utility Hub</title>
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://css-utility-hub.netlify.app/contact.html" />
+    <meta name="theme-color" content="#0a0e17" />
+    <link rel="icon" href="assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="assets/images/icon/favicon.png" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/hub.css" />
+    <link rel="stylesheet" href="assets/css/landing.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="landing-shell">
+      <header class="landing-topbar" aria-label="상단 바">
+        <a class="landing-topbar__brand" href="index.html" aria-label="CSS Utility Hub 메인으로 이동">
+          <span class="landing-topbar__logo" aria-hidden="true"></span>
+          <div class="landing-topbar__title">CSS Utility Hub</div>
+        </a>
+        <button type="button" class="hub-topbar__icon" id="theme-toggle" aria-label="테마 전환">
+          <span class="sr-only theme-toggle-label">테마 전환</span>
+          <svg
+            class="theme-icon--moon"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg
+            class="theme-icon--sun"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            />
+          </svg>
+        </button>
+      </header>
+
+      <main class="contact-page" id="main">
+        <h1 class="contact-page__title">문의하기</h1>
+        <p class="contact-page__lead">
+          서비스 이용, 오류 신고, 제휴·광고 등 문의를 남겨 주세요. 전송이 완료되면 이 페이지에서 안내 창이 열립니다.
+          (자바스크립트를 사용할 수 없을 때는 Netlify 기본 확인 화면 또는 설정한 완료 페이지로 이동할 수 있습니다.)
+        </p>
+
+        <div class="contact-panel">
+          <!-- Netlify: name·netlify·POST·action="/" 권장 패턴 + AJAX로 동일 엔드포인트 전송 -->
+          <form
+            id="contact-form"
+            class="contact-form"
+            name="contact"
+            method="POST"
+            netlify
+            netlify-honeypot="bot-field"
+            action="/"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+
+            <div class="contact-honey" aria-hidden="true">
+              <label>
+                이 필드는 비워 두세요
+                <input type="text" name="bot-field" tabindex="-1" autocomplete="off" />
+              </label>
+            </div>
+
+            <p class="control-group">
+              <label for="cf-name">이름 <span aria-hidden="true">*</span></label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="80" />
+            </p>
+
+            <p class="control-group">
+              <label for="cf-email">이메일 <span aria-hidden="true">*</span></label>
+              <input
+                id="cf-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                inputmode="email"
+                placeholder="회신 받으실 이메일"
+              />
+            </p>
+
+            <p class="control-group">
+              <label for="cf-phone">연락처 <span class="sr-only">(선택)</span></label>
+              <input
+                id="cf-phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                inputmode="tel"
+                placeholder="전화번호 (선택)"
+              />
+            </p>
+
+            <p class="control-group">
+              <label for="cf-category">문의 유형 <span aria-hidden="true">*</span></label>
+              <select id="cf-category" name="category" required>
+                <option value="" disabled selected>선택해 주세요</option>
+                <option value="service">서비스 이용 문의</option>
+                <option value="bug">오류·버그 신고</option>
+                <option value="ads">제휴·광고 문의</option>
+                <option value="copyright">저작권·콘텐츠</option>
+                <option value="other">기타</option>
+              </select>
+            </p>
+
+            <p class="control-group">
+              <label for="cf-subject">제목 <span class="sr-only">(선택)</span></label>
+              <input id="cf-subject" name="subject" type="text" maxlength="120" placeholder="한 줄 요약 (선택)" />
+            </p>
+
+            <p class="control-group">
+              <label for="cf-message">문의 내용 <span aria-hidden="true">*</span></label>
+              <textarea
+                id="cf-message"
+                name="message"
+                required
+                minlength="10"
+                maxlength="8000"
+                placeholder="문의하실 내용을 구체적으로 적어 주세요 (10자 이상)"
+              ></textarea>
+            </p>
+
+            <div class="contact-form__consent">
+              <label>
+                <input id="cf-consent" name="consent" type="checkbox" required value="yes" />
+                <span>
+                  <a href="terms.html">이용약관</a> 및
+                  <a href="privacy.html">개인정보처리방침</a>을 확인하였으며, 문의 처리 목적으로 이름·이메일·연락처·문의
+                  내용의 수집 및 이용에 동의합니다.
+                </span>
+              </label>
+            </div>
+
+            <p class="contact-form__actions">
+              <button type="submit" class="btn btn--primary btn--block">문의 보내기</button>
+            </p>
+            <p id="contact-form-hint" class="contact-form__hint" role="status" aria-live="polite"></p>
+            <p class="contact-form__hint">
+              급한 연락은 <a href="mailto:yspark004@naver.com">yspark004@naver.com</a> 으로도 보내실 수 있습니다.
+            </p>
+          </form>
+        </div>
+      </main>
+
+      <div
+        class="contact-modal"
+        id="contact-success-modal"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-modal-title"
+      >
+        <div class="contact-modal__backdrop" data-modal-close tabindex="-1" aria-hidden="true"></div>
+        <div class="contact-modal__panel">
+          <h2 id="contact-modal-title" class="contact-modal__title">문의가 접수되었습니다</h2>
+          <p class="contact-modal__text">
+            보내주신 내용을 확인한 뒤, 입력하신 이메일로 회신 드리겠습니다.
+          </p>
+          <button type="button" class="btn btn--primary contact-modal__btn" data-modal-close>확인</button>
+        </div>
+      </div>
+
+      <footer class="site-footer" id="site-footer">
+        <div class="site-footer__inner">
+          <div class="site-footer__col">
+            <p class="site-footer__meta">Glass CSS Gen</p>
+            <p class="site-footer__credit">
+              Designed &amp; Developed by <span lang="en">Studio Glass</span>
+            </p>
+          </div>
+          <nav class="site-footer__links" aria-label="정책 및 문의">
+            <a class="site-footer__nav-link" href="contact.html">문의하기</a>
+            <span class="site-footer__sep" aria-hidden="true">·</span>
+            <a class="site-footer__nav-link" href="terms.html">이용약관</a>
+            <span class="site-footer__sep" aria-hidden="true">·</span>
+            <a class="site-footer__nav-link" href="privacy.html">개인정보처리방침</a>
+          </nav>
+          <a class="site-footer__link" href="mailto:yspark004@naver.com">yspark004@naver.com</a>
+        </div>
+      </footer>
+    </div>
+    <script src="assets/js/contact-form.js" defer></script>
+    <script src="assets/js/theme.js" defer></script>
+  </body>
+</html>

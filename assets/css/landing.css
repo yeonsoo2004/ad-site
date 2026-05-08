@@ -155,6 +155,11 @@
   min-width: 0;
 }
 
+a.landing-topbar__brand {
+  text-decoration: none;
+  color: inherit;
+}
+
 .landing-topbar__logo {
   width: 34px;
   height: 34px;

@@ -1,0 +1,251 @@
+/* 문의하기 · 정책 페이지 공통 */
+
+.contact-page {
+  flex: 1 0 auto;
+  padding: var(--space-10) var(--safe-inline) var(--space-16);
+  max-width: 42rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact-page__title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-3xl);
+  font-weight: 850;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.contact-page__lead {
+  margin: 0 0 var(--space-8);
+  color: var(--color-text-secondary);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+}
+
+.contact-panel {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-glass);
+  padding: var(--space-6);
+}
+
+.contact-form .control-group input[type="email"],
+.contact-form .control-group input[type="tel"],
+.contact-form .control-group select,
+.contact-form .control-group textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-input-bg);
+  color: var(--color-text-primary);
+  transition: background 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+}
+
+.contact-form .control-group textarea {
+  min-height: 12rem;
+  resize: vertical;
+  line-height: var(--leading-normal);
+}
+
+.contact-form .control-group select {
+  cursor: pointer;
+}
+
+.contact-form .control-group input::placeholder,
+.contact-form .control-group textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.contact-form__consent {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  background: color-mix(in oklab, var(--color-bg-mid) 55%, transparent);
+}
+
+.contact-form__consent label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.contact-form__consent input[type="checkbox"] {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  accent-color: var(--color-accent);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.contact-form__consent a {
+  font-weight: 600;
+}
+
+.contact-form .contact-form__actions {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact-form > p.control-group {
+  margin: 0 0 var(--space-5);
+}
+
+.contact-form > p.contact-form__actions {
+  margin-bottom: var(--space-3);
+}
+
+.contact-form > p.contact-form__hint {
+  margin: 0;
+}
+
+.contact-form__hint {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+.contact-form__hint.is-error {
+  color: var(--color-danger);
+}
+
+.contact-form__hint.is-ok {
+  color: var(--color-success);
+}
+
+.contact-honey {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 정책 문서 */
+.policy-doc {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-glass);
+  padding: var(--space-6) var(--space-6) var(--space-8);
+}
+
+.policy-doc h2 {
+  margin: var(--space-8) 0 var(--space-3);
+  font-size: var(--text-xl);
+  font-weight: 750;
+}
+
+.policy-doc h2:first-child {
+  margin-top: 0;
+}
+
+.policy-doc p,
+.policy-doc li {
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.policy-doc ul {
+  padding-left: 1.25rem;
+}
+
+.policy-doc__updated {
+  margin: 0 0 var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+#theme-toggle .theme-icon--sun {
+  display: none;
+}
+
+html[data-theme="light"] #theme-toggle .theme-icon--sun {
+  display: block;
+}
+
+html[data-theme="light"] #theme-toggle .theme-icon--moon {
+  display: none;
+}
+
+/* 문의 완료 페이지 */
+.contact-success__note {
+  margin: 0 0 var(--space-5);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+/* 문의 완료 모달 */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  box-sizing: border-box;
+}
+
+.contact-modal[hidden] {
+  display: none !important;
+}
+
+.contact-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.contact-modal__panel {
+  position: relative;
+  max-width: 26rem;
+  width: 100%;
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.contact-modal__title {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+.contact-modal__text {
+  margin: 0 0 var(--space-6);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+.contact-modal__btn {
+  width: 100%;
+}

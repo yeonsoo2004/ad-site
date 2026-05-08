@@ -47,7 +47,7 @@
       window.HubLayout.mountSidebar(opt);
     }
     if (typeof window.HubLayout.mountFooter === "function") {
-      window.HubLayout.mountFooter();
+      window.HubLayout.mountFooter(opt);
     }
   }
 

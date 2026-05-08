@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="문의 접수 완료 — CSS Utility Hub" />
+    <title>문의 접수 완료 — CSS Utility Hub</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="theme-color" content="#0a0e17" />
+    <link rel="icon" href="assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="assets/images/icon/favicon.png" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/hub.css" />
+    <link rel="stylesheet" href="assets/css/landing.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light")
+            document.documentElement.setAttribute("data-theme", "light");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="landing-shell">
+      <header class="landing-topbar" aria-label="상단 바">
+        <a class="landing-topbar__brand" href="index.html" aria-label="CSS Utility Hub 메인으로 이동">
+          <span class="landing-topbar__logo" aria-hidden="true"></span>
+          <div class="landing-topbar__title">CSS Utility Hub</div>
+        </a>
+        <button type="button" class="hub-topbar__icon" id="theme-toggle" aria-label="테마 전환">
+          <span class="sr-only theme-toggle-label">테마 전환</span>
+          <svg
+            class="theme-icon--moon"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg
+            class="theme-icon--sun"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            />
+          </svg>
+        </button>
+      </header>
+
+      <main class="contact-page" id="main">
+        <h1 class="contact-page__title">문의가 접수되었습니다</h1>
+        <p class="contact-page__lead">
+          보내주신 내용을 확인한 뒤, 입력하신 이메일로 회신 드리겠습니다. 문의량에 따라 답변이 늦어질 수 있습니다.
+        </p>
+        <div class="contact-panel">
+          <p class="contact-success__note">
+            추가 문의는 <a href="contact.html">문의하기</a>에서 다시 보내실 수 있습니다.
+          </p>
+          <a class="btn btn--primary" href="index.html">메인으로 돌아가기</a>
+        </div>
+      </main>
+
+      <footer class="site-footer" id="site-footer">
+        <div class="site-footer__inner">
+          <div class="site-footer__col">
+            <p class="site-footer__meta">Glass CSS Gen</p>
+            <p class="site-footer__credit">
+              Designed &amp; Developed by <span lang="en">Studio Glass</span>
+            </p>
+          </div>
+          <nav class="site-footer__links" aria-label="정책 및 문의">
+            <a class="site-footer__nav-link" href="contact.html">문의하기</a>
+            <span class="site-footer__sep" aria-hidden="true">·</span>
+            <a class="site-footer__nav-link" href="terms.html">이용약관</a>
+            <span class="site-footer__sep" aria-hidden="true">·</span>
+            <a class="site-footer__nav-link" href="privacy.html">개인정보처리방침</a>
+          </nav>
+          <a class="site-footer__link" href="mailto:yspark004@naver.com">yspark004@naver.com</a>
+        </div>
+      </footer>
+    </div>
+    <script src="assets/js/theme.js" defer></script>
+  </body>
+</html>

@@ -144,7 +144,9 @@
     );
   }
 
-  function footerHtml() {
+  function footerHtml(options) {
+    options = options || {};
+    var base = options.mode === "mpa-subpage" ? "../" : "";
     return (
       '<div class="site-footer__inner">' +
       '<div class="site-footer__col">' +
@@ -153,7 +155,20 @@
       "Designed &amp; Developed by <span lang=\"en\">Studio Glass</span>" +
       "</p>" +
       "</div>" +
-      '<a class="site-footer__link" href="mailto:hello@glasscss.example">yspark004@naver.com</a>' +
+      '<nav class="site-footer__links" aria-label="정책 및 문의">' +
+      '<a class="site-footer__nav-link" href="' +
+      base +
+      'contact.html">문의하기</a>' +
+      '<span class="site-footer__sep" aria-hidden="true">·</span>' +
+      '<a class="site-footer__nav-link" href="' +
+      base +
+      'terms.html">이용약관</a>' +
+      '<span class="site-footer__sep" aria-hidden="true">·</span>' +
+      '<a class="site-footer__nav-link" href="' +
+      base +
+      'privacy.html">개인정보처리방침</a>' +
+      "</nav>" +
+      '<a class="site-footer__link" href="mailto:yspark004@naver.com">yspark004@naver.com</a>' +
       "</div>"
     );
   }
@@ -165,10 +180,10 @@
     return el;
   }
 
-  function mountFooter() {
+  function mountFooter(options) {
     var el = document.getElementById("site-footer");
     if (!el) return;
-    el.innerHTML = footerHtml();
+    el.innerHTML = footerHtml(options || {});
   }
 
   window.HubLayout = {
