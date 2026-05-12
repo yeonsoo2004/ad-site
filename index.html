@@ -1,105 +1,124 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <!-- ================== 기본 문서 설정 ================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>CSS Utility Hub | CSS 디자인 유틸리티 생성기 15종</title>
+  
+    <!-- ================== 기본 SEO ================== -->
     <meta
       name="description"
-      content="15가지 CSS 디자인 유틸리티 도구를 한곳에서. 글래스, 뉴모피즘, 그리드, 팔레트, 섀도우, 타이포 스케일까지 생성기 모음."
+      content="15가지 CSS 디자인 유틸리티 도구를 한곳에서. 글래스모피즘, 뉴모피즘, 그리드, 팔레트, 섀도우, 타이포 스케일, 그라디언트 등 실전형 CSS 생성기 모음."
     />
-    <title>CSS Utility Hub — 메인</title>
-
-    <!-- ================== 기본 메타 태그 (SEO) ================== -->
-    <meta name="title" content="CSS Utility Hub — 메인" />
     <meta
       name="keywords"
-      content="CSS 도구, CSS 생성기, 디자인 유틸리티, 글래스모피즘, 뉴모피즘, 그라디언트, 메쉬 그라디언트, 패턴, 그리드, 플렉스, 타이포 스케일, 팔레트, 대비, 섀도우, 스페이싱"
+      content="CSS 도구, CSS 생성기, CSS Utility Hub, 글래스모피즘, 뉴모피즘, CSS 그리드, flex generator, color palette, shadow generator, typography scale, gradient generator"
     />
     <meta name="author" content="Studio Glass" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
-    <meta property="og:title" content="CSS Utility Hub — 메인" />
-    <meta
-      property="og:description"
-      content="글래스/뉴모피즘/그라디언트/그리드/팔레트 등 15가지 CSS 유틸리티 도구를 한곳에서. 빠르게 만들고 복사하세요."
-    />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="language" content="ko-KR" />
+    <link rel="canonical" href="https://css-utility-hub.kr/" />
+  
+    <!-- ================== 사이트 인증 ================== -->
+    <meta name="google-site-verification" content="sDL2M59e5-6FvCVogNCuiwuFQzwxq3JLFW98YDRXcj0" />
+    <meta name="msvalidate.01" content="6154EA2D58A938E572258BA7D922F2B4" />
+    <meta name="naver-site-verification" content="5c628b8d9cd9aa3aa897d1e4e045838a3fd46c91" />
+  
+    <!-- ================== Open Graph ================== -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://css-utility-hub.netlify.app/" />
-    <meta property="og:image" content="https://css-utility-hub.netlify.app/assets/images/og-img.webp" />
-    <meta property="og:image" content="https://css-utility-hub.netlify.app/assets/images/og-img.jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="CSS Utility Hub" />
     <meta property="og:site_name" content="CSS Utility Hub" />
     <meta property="og:locale" content="ko_KR" />
-
-    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta property="og:title" content="CSS Utility Hub | CSS 디자인 유틸리티 생성기 15종" />
+    <meta
+      property="og:description"
+      content="글래스모피즘, 뉴모피즘, 그라디언트, 그리드, 팔레트 등 15가지 CSS 유틸리티 도구를 한곳에서 빠르게 생성하고 복사하세요."
+    />
+    <meta property="og:url" content="https://css-utility-hub.kr/" />
+    <meta property="og:image" content="https://css-utility-hub.kr/assets/images/og-img.webp" />
+    <meta property="og:image:secure_url" content="https://css-utility-hub.kr/assets/images/og-img.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CSS Utility Hub 메인 화면" />
+  
+    <!-- ================== Twitter ================== -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CSS Utility Hub — 메인" />
+    <meta name="twitter:title" content="CSS Utility Hub | CSS 디자인 유틸리티 생성기 15종" />
     <meta
       name="twitter:description"
-      content="CSS Utility Hub: 15가지 CSS 디자인 유틸리티 도구 모음. 미리보기로 확인하고 결과 CSS를 복사하세요."
+      content="실무형 CSS 생성기 15종 모음. 디자인 미리보기와 CSS 코드 복사를 한 번에."
     />
-    <meta name="twitter:image" content="https://css-utility-hub.netlify.app/assets/images/og-img.jpeg" />
-    <meta name="twitter:image:alt" content="CSS Utility Hub" />
-    <meta name="twitter:site" content="" />
-    <meta name="twitter:creator" content="" />
-
-    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
-    <meta name="language" content="ko" />
-    <meta name="distribution" content="global" />
-    <meta name="rating" content="general" />
-    <meta name="format-detection" content="telephone=no" />
-    <link rel="canonical" href="https://css-utility-hub.netlify.app/" />
-
-    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="twitter:image" content="https://css-utility-hub.kr/assets/images/og-img.webp" />
+    <meta name="twitter:image:alt" content="CSS Utility Hub 메인 화면" />
+  
+    <!-- ================== PWA / 브라우저 최적화 ================== -->
     <meta name="theme-color" content="#0a0e17" />
     <meta name="application-name" content="CSS Utility Hub" />
-    <meta name="msapplication-TileColor" content="#0a0e17" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
-    <link rel="icon" href="assets/images/icon/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" href="assets/images/icon/favicon.png" />
-    <link rel="apple-touch-icon" href="assets/images/icon/favicon.png" />
-    <link rel="manifest" href="site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+  
+    <!-- ================== 아이콘 ================== -->
+    <link rel="icon" href="/assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+    <!-- ================== 성능 최적화 ================== -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
     />
-    <link rel="stylesheet" href="assets/css/base.css" />
-    <link rel="stylesheet" href="assets/css/common.css" />
-    <link rel="stylesheet" href="assets/css/hub.css" />
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/landing.css" />
-    <link rel="stylesheet" href="assets/css/footer.css" />
+  
+    <!-- ================== CSS ================== -->
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/hub.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/landing.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+  
+    <!-- ================== 초기 테마 적용 ================== -->
     <script>
       (function () {
         try {
-          if (localStorage.getItem("glass-theme") === "light")
+          if (localStorage.getItem("glass-theme") === "light") {
             document.documentElement.setAttribute("data-theme", "light");
+          }
         } catch (e) {}
       })();
     </script>
-    <meta name="google-site-verification" content="whDTabGeuP6WiT3Zg9UfkEslWxlzFCEGvR-ILluid8Y" />
+  
+    <!-- ================== 구조화 데이터 (Schema.org) ================== -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "CSS Utility Hub",
         "alternateName": "CSS 디자인 유틸리티 허브",
-        "url": "https://css-utility-hub.netlify.app/",
-        "description": "15가지 CSS 디자인 유틸리티 도구를 한곳에서. 글래스, 뉴모피즘, 그리드, 팔레트, 섀도우, 타이포 스케일까지 생성기 모음.",
+        "url": "https://css-utility-hub.kr/",
+        "description": "15가지 CSS 디자인 유틸리티 도구를 한곳에서. 글래스모피즘, 뉴모피즘, 그리드, 팔레트, 섀도우, 타이포 스케일까지 제공.",
         "inLanguage": "ko-KR",
         "publisher": {
           "@type": "Organization",
-          "name": "Studio Glass"
+          "name": "Studio Glass",
+          "url": "https://css-utility-hub.kr/"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://css-utility-hub.kr/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
         }
       }
     </script>
-    <meta name="msvalidate.01" content="6154EA2D58A938E572258BA7D922F2B4" />
-    <meta name="naver-site-verification" content="976c08724ca0edfa002a8209cb95c2458e62b79a" />
   </head>
   <body>
     <div class="landing-shell">
