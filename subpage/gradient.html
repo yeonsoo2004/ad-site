@@ -1,93 +1,124 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <!-- ================== 기본 문서 설정 ================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="그라디언트 메이커 — CSS Utility Hub 도구" />
-    <title>그라디언트 메이커 — CSS Utility Hub</title>
-
-    <!-- ================== 기본 메타 태그 (SEO) ================== -->
-    <meta name="title" content="그라디언트 메이커 — CSS Utility Hub" />
+    <title>CSS 그라디언트 메이커 | linear · radial · conic 생성기</title>
+  
+    <!-- ================== 기본 SEO ================== -->
     <meta
       name="description"
-      content="CSS linear/radial/conic 그라디언트를 만들고 스탑/각도/위치를 조절해 미리보기로 확인한 뒤 CSS를 복사/저장하는 그라디언트 메이커."
+      content="CSS 그라디언트 메이커. linear-gradient, radial-gradient, conic-gradient를 생성하고 색상 스탑, 각도, 중심 위치를 실시간 미리보기 후 CSS 코드로 복사하세요."
     />
     <meta
       name="keywords"
-      content="CSS gradient, linear-gradient, radial-gradient, conic-gradient, color stop, angle, 배경 디자인, 그라디언트 생성기"
+      content="CSS gradient, linear-gradient, radial-gradient, conic-gradient, gradient generator, color stop, angle, 배경 디자인, CSS Utility Hub"
     />
     <meta name="author" content="Studio Glass" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- ================== Open Graph 메타 태그 (SNS 공유: Facebook, Kakao 등) ================== -->
-    <meta property="og:title" content="그라디언트 메이커 — CSS Utility Hub" />
-    <meta
-      property="og:description"
-      content="Linear/Radial/Conic 그라디언트를 만들고 CSS를 복사하세요. 스탑(색/위치)과 각도/중심 조절 지원."
-    />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="language" content="ko-KR" />
+    <link rel="canonical" href="https://css-utility-hub.kr/subpage/gradient.html" />
+  
+    <!-- ================== Open Graph ================== -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://css-utility-hub.netlify.app/subpage/gradient.html" />
-    <meta property="og:image" content="https://css-utility-hub.netlify.app/assets/images/og-img.webp" />
-    <meta property="og:image" content="https://css-utility-hub.netlify.app/assets/images/og-img.jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="CSS Utility Hub" />
     <meta property="og:site_name" content="CSS Utility Hub" />
     <meta property="og:locale" content="ko_KR" />
-
-    <!-- ================== Twitter 카드 메타 태그 ================== -->
+    <meta property="og:title" content="CSS 그라디언트 메이커 | linear · radial · conic 생성기" />
+    <meta
+      property="og:description"
+      content="Linear, Radial, Conic 그라디언트를 생성하고 색상 스탑, 위치, 각도를 조절해 실시간 미리보기 후 CSS 코드로 복사하세요."
+    />
+    <meta property="og:url" content="https://css-utility-hub.kr/subpage/gradient.html" />
+    <meta property="og:image" content="https://css-utility-hub.kr/assets/images/og-img.webp" />
+    <meta property="og:image:secure_url" content="https://css-utility-hub.kr/assets/images/og-img.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CSS 그라디언트 메이커 화면" />
+  
+    <!-- ================== Twitter ================== -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="그라디언트 메이커 — CSS Utility Hub" />
+    <meta name="twitter:title" content="CSS 그라디언트 메이커 | linear · radial · conic 생성기" />
     <meta
       name="twitter:description"
-      content="CSS linear/radial/conic 그라디언트 생성기. 미리보기로 확인하고 결과 CSS를 복사하세요."
+      content="CSS linear, radial, conic 그라디언트를 생성하고 실시간 미리보기 후 CSS 코드를 복사하세요."
     />
-    <meta name="twitter:image" content="https://css-utility-hub.netlify.app/assets/images/og-img.jpeg" />
-    <meta name="twitter:image:alt" content="CSS Utility Hub" />
-    <meta name="twitter:site" content="" />
-    <meta name="twitter:creator" content="" />
-
-    <!-- ================== SEO 및 사용자 경험 보완 태그 ================== -->
-    <meta name="language" content="ko" />
-    <meta name="distribution" content="global" />
-    <meta name="rating" content="general" />
-    <meta name="format-detection" content="telephone=no" />
-    <link rel="canonical" href="https://css-utility-hub.netlify.app/subpage/gradient.html" />
-
-    <!-- ================== 웹앱 및 브라우저 최적화 ================== -->
+    <meta name="twitter:image" content="https://css-utility-hub.kr/assets/images/og-img.webp" />
+    <meta name="twitter:image:alt" content="CSS 그라디언트 메이커 화면" />
+  
+    <!-- ================== 웹앱 및 브라우저 ================== -->
     <meta name="theme-color" content="#0a0e17" />
     <meta name="application-name" content="CSS Utility Hub" />
-    <meta name="msapplication-TileColor" content="#0a0e17" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
-    <link rel="icon" href="../assets/images/icon/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" href="../assets/images/icon/favicon.png" />
-    <link rel="apple-touch-icon" href="../assets/images/icon/favicon.png" />
-    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+  
+    <!-- ================== 아이콘 ================== -->
+    <link rel="icon" href="/assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+    <!-- ================== 성능 최적화 ================== -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
     />
-    <link rel="stylesheet" href="../assets/css/base.css" />
-    <link rel="stylesheet" href="../assets/css/common.css" />
-    <link rel="stylesheet" href="../assets/css/hub.css" />
-    <link rel="stylesheet" href="../assets/css/index.css" />
-    <link rel="stylesheet" href="../assets/css/footer.css" />
+  
+    <!-- ================== CSS ================== -->
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/hub.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+  
+    <!-- ================== 초기 테마 ================== -->
     <script>
       (function () {
         try {
-          if (localStorage.getItem("glass-theme") === "light")
+          if (localStorage.getItem("glass-theme") === "light") {
             document.documentElement.setAttribute("data-theme", "light");
+          }
         } catch (e) {}
       })();
     </script>
+  
+    <!-- ================== 페이지 식별 ================== -->
     <script>
       window.__HUB_PAGE__ = { tool: "gradient" };
     </script>
-    <meta name="google-site-verification" content="whDTabGeuP6WiT3Zg9UfkEslWxlzFCEGvR-ILluid8Y" />
+  
+    <!-- ================== 구조화 데이터 ================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "CSS 그라디언트 메이커",
+        "url": "https://css-utility-hub.kr/subpage/gradient.html",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "description": "CSS linear-gradient, radial-gradient, conic-gradient를 생성하고 색상 스탑, 각도, 위치를 조절하며 실시간 미리보기와 코드 복사가 가능한 그라디언트 생성기.",
+        "inLanguage": "ko-KR",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Studio Glass",
+          "url": "https://css-utility-hub.kr/"
+        }
+      }
+    </script>
+  
+    <!-- ================== 사이트 인증 ================== -->
+    <meta name="google-site-verification" content="sDL2M59e5-6FvCVogNCuiwuFQzwxq3JLFW98YDRXcj0" />
     <meta name="msvalidate.01" content="6154EA2D58A938E572258BA7D922F2B4" />
-    <meta name="naver-site-verification" content="976c08724ca0edfa002a8209cb95c2458e62b79a" />
+    <meta name="naver-site-verification" content="5c628b8d9cd9aa3aa897d1e4e045838a3fd46c91" />
   </head>
   <body>
     <div id="hub-root">

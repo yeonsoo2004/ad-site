@@ -1,105 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://css-utility-hub.netlify.app/</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/hub.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/hub.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/animation.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/contact.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/border.html</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://css-utility-hub.kr/privacy.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/container.html</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://css-utility-hub.kr/terms.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/contrast.html</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://css-utility-hub.kr/contact-success.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/flex.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/glass.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/glass.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/neumorphism.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/gradient.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/gradient.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/grid.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/mesh.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/mesh.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/pattern.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/neumorphism.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/grid.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/palette.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/flex.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/pattern.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/spacing.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/shadow.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/container.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/spacing.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/type.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://css-utility-hub.netlify.app/subpage/type.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://css-utility-hub.kr/subpage/palette.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://css-utility-hub.kr/subpage/contrast.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://css-utility-hub.kr/subpage/shadow.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://css-utility-hub.kr/subpage/border.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://css-utility-hub.kr/subpage/animation.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>
