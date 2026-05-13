@@ -18,6 +18,7 @@
         { id: "flex", label: "플렉스박스 빌더" },
         { id: "spacing", label: "스페이싱 스케일" },
         { id: "container", label: "컨테이너 계산기" },
+        { id: "clamp-layout", label: "Fluid clamp 레이아웃" },
       ],
     },
     {

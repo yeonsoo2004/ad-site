@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Fluid clamp 레이아웃 계산기 | padding·gap·max-width 반응형 CSS</title>
+
+    <meta
+      name="description"
+      content="뷰포트 구간에서 최소~최대 픽셀을 선형 보간하는 clamp() CSS 생성기. padding-inline, gap, max-width 등 레이아웃 속성에 적용하고 미리보기 후 코드를 복사하세요."
+    />
+    <meta
+      name="keywords"
+      content="css clamp, fluid layout, responsive padding, clamp generator, gap clamp, max-width fluid, CSS Utility Hub"
+    />
+    <meta name="author" content="Studio Glass" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="language" content="ko-KR" />
+    <link rel="canonical" href="https://css-utility-hub.kr/subpage/clamp-layout.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CSS Utility Hub" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="Fluid clamp 레이아웃 계산기 | padding·gap·max-width 반응형 CSS" />
+    <meta
+      property="og:description"
+      content="clamp()로 패딩·갭·max-width를 유동화합니다. 최소/최대 뷰포트와 픽셀 값을 설정하고 CSS를 복사하세요."
+    />
+    <meta property="og:url" content="https://css-utility-hub.kr/subpage/clamp-layout.html" />
+    <meta property="og:image" content="https://css-utility-hub.kr/assets/images/og-img.webp" />
+    <meta property="og:image:secure_url" content="https://css-utility-hub.kr/assets/images/og-img.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Fluid clamp 레이아웃 계산기" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fluid clamp 레이아웃 계산기 | padding·gap·max-width 반응형 CSS" />
+    <meta
+      name="twitter:description"
+      content="레이아웃용 clamp() CSS를 생성합니다. 미리보기와 변수(:root) 출력을 지원합니다."
+    />
+    <meta name="twitter:image" content="https://css-utility-hub.kr/assets/images/og-img.webp" />
+    <meta name="twitter:image:alt" content="Fluid clamp 레이아웃 계산기" />
+
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="application-name" content="CSS Utility Hub" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="CSS Utility Hub" />
+    <meta name="msapplication-TileColor" content="#0a0e17" />
+
+    <link rel="icon" href="/assets/images/icon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/assets/images/icon/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/hub.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("glass-theme") === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script>
+      window.__HUB_PAGE__ = { tool: "clamp-layout" };
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Fluid clamp 레이아웃 계산기",
+        "url": "https://css-utility-hub.kr/subpage/clamp-layout.html",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "description": "뷰포트 구간에서 최소·최대 픽셀 값을 선형 보간하는 clamp() CSS를 생성. padding-inline, gap, max-width 등 레이아웃 속성과 CSS 변수 출력을 지원.",
+        "inLanguage": "ko-KR",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Studio Glass",
+          "url": "https://css-utility-hub.kr/"
+        }
+      }
+    </script>
+
+    <meta name="google-site-verification" content="sDL2M59e5-6FvCVogNCuiwuFQzwxq3JLFW98YDRXcj0" />
+    <meta name="msvalidate.01" content="6154EA2D58A938E572258BA7D922F2B4" />
+    <meta name="naver-site-verification" content="5c628b8d9cd9aa3aa897d1e4e045838a3fd46c91" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5148431621573217"
+     crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="hub-root">
+      <div class="seo-wrap">
+        <article class="seo-doc" aria-label="Fluid clamp 레이아웃 도구 설명">
+          <h1>Fluid clamp 레이아웃: padding·gap·max-width를 한 줄로 반응형에 맞추는 방법</h1>
+          <p>
+            <code>clamp()</code>는 CSS에서 “최소값, 선호값(보통 계산식), 최대값”을 한 번에 지정할 수 있는 함수입니다.
+            이 페이지의 계산기는 <strong>두 뷰포트 폭 사이에서 픽셀 값이 선형으로 변하도록</strong> 중간 계산식을 자동으로 만들어,
+            <strong>padding-inline</strong>, <strong>gap</strong>, <strong>max-width</strong> 같은 레이아웃 속성에 바로 붙일 수 있는 코드를 제공합니다.
+            브라우저 창 크기를 바꿔 보면서 값이 자연스럽게 변하는지 확인한 뒤, 생성된 CSS를 복사해 프로젝트에 적용하세요.
+          </p>
+
+          <nav class="seo-toc" aria-label="목차">
+            <div class="seo-toc__title">목차</div>
+            <ol>
+              <li><a href="#seo-cl-why">왜 레이아웃에 clamp를 쓰나요</a></li>
+              <li><a href="#seo-cl-formula">이 도구가 만드는 수식의 의미</a></li>
+              <li><a href="#seo-cl-when">어떤 속성에 쓰면 좋은지</a></li>
+              <li><a href="#seo-cl-var">CSS 변수 출력 모드</a></li>
+              <li><a href="#seo-cl-related">관련 도구와 함께 쓰기</a></li>
+              <li><a href="#seo-cl-faq">자주 묻는 질문</a></li>
+            </ol>
+          </nav>
+
+          <section id="seo-cl-why" aria-label="배경">
+            <h2>왜 레이아웃에 clamp를 쓰나요</h2>
+            <p>
+              미디어 쿼리로 구간마다 값을 나누면 명확하지만, 브레이크포인트가 늘어날수록 유지보수가 무거워집니다.
+              반대로 <code>clamp()</code>와 <code>calc()</code>를 조합하면 <strong>좁은 화면에서는 작게, 넓은 화면에서는 크게</strong> 같은 방향으로
+              부드럽게 변화시키며 코드 줄 수를 줄일 수 있습니다. 특히 섹션 패딩, 카드 그리드의 gap, 최대 콘텐츠 폭처럼
+              “화면이 커질수록 조금씩 넓어져도 된다”는 규칙에 잘 맞습니다.
+            </p>
+            <ul>
+              <li><strong>부드러운 전환</strong>: 구간 경계에서 값이 튀지 않게 조절할 수 있습니다.</li>
+              <li><strong>토큰화</strong>: 변수 모드로 <code>:root</code>에 두고 여러 컴포넌트에서 재사용하기 좋습니다.</li>
+              <li><strong>한 줄 규칙</strong>: 컴포넌트 단위로 읽기 쉬운 스타일을 유지합니다.</li>
+            </ul>
+          </section>
+
+          <section id="seo-cl-formula" aria-label="수식">
+            <h2>이 도구가 만드는 수식의 의미</h2>
+            <p>
+              최소 뷰포트 <code>Vmin</code>에서 값 <code>MinPx</code>, 최대 뷰포트 <code>Vmax</code>에서 값 <code>MaxPx</code>가 되도록
+              <code>100vw</code>에 비례하는 선형 식을 <code>calc()</code> 안에 넣고, 전체를 <code>clamp(MinPx, …, MaxPx)</code>로 감쌉니다.
+              그 결과 화면이 좁을 때는 하한에 가깝고, 넓을 때는 상한에 가깝게 수렴합니다.
+            </p>
+            <div class="seo-note">
+              <p>
+                주의: 극단적으로 좁거나 넓은 뷰포트에서는 디자인 의도와 다르게 느껴질 수 있으니,
+                실제 서비스의 최소 지원 폭과 대형 모니터에서의 최대 폭을 기준으로 <code>Vmin</code>·<code>Vmax</code>를 잡는 것이 좋습니다.
+              </p>
+            </div>
+          </section>
+
+          <section id="seo-cl-when" aria-label="속성별">
+            <h2>어떤 속성에 쓰면 좋은지</h2>
+            <ul>
+              <li><strong>padding-inline / padding-block</strong>: 섹션 여백, 카드 내부 여백의 유동화.</li>
+              <li><strong>gap / row-gap / column-gap</strong>: 그리드·플렉스 간격을 화면에 맞춰 조절.</li>
+              <li><strong>margin-block</strong>: 섹션 사이 수직 리듬.</li>
+              <li><strong>max-width</strong>: “너무 넓게 퍼지지 않게” 콘텐츠 폭을 유동 상한으로 제한.</li>
+            </ul>
+          </section>
+
+          <section id="seo-cl-var" aria-label="변수">
+            <h2>CSS 변수 출력 모드</h2>
+            <p>
+              체크 시 <code>:root</code>에 사용자 지정 변수 이름으로 값을 선언하고, 선택한 요소에서는 <code>var(--이름)</code>으로 참조합니다.
+              디자인 토큰을 한곳에 모아 두는 팀 규칙과 잘 맞습니다.
+            </p>
+          </section>
+
+          <section id="seo-cl-related" aria-label="관련">
+            <h2>관련 도구와 함께 쓰기</h2>
+            <p>
+              컨테이너 전체 규칙은 <a href="./container.html">컨테이너 계산기</a>로,
+              간격 스케일 토큰은 <a href="./spacing.html">스페이싱 스케일</a>로 정한 뒤, 이 페이지에서 “유동 구간만” clamp로 다듬으면
+              레이아웃 시스템이 일관됩니다.
+            </p>
+          </section>
+
+          <section id="seo-cl-faq" aria-label="FAQ">
+            <h2>자주 묻는 질문</h2>
+            <ul>
+              <li><strong>Q. rem이 아니라 px만 되나요?</strong> A. 이 도구는 픽셀 기준 선형 보간에 최적화되어 있습니다. rem 기반은 루트 폰트를 고려해 별도로 조정하세요.</li>
+              <li><strong>Q. 타이포 크기에도 쓸 수 있나요?</strong> A. 가능은 하나, 글자 크기는 전용 <a href="./type.html">타이포 스케일</a> 도구가 팀 규칙에 더 맞을 수 있습니다.</li>
+              <li><strong>Q. 미디어 쿼리와 함께 써도 되나요?</strong> A. 네. 큰 구조는 미디어 쿼리로, 세부 간격만 clamp로 부드럽게 하는 식의 혼합이 흔합니다.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">알림</div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "메인", "item": "https://css-utility-hub.kr/" },
+          { "@type": "ListItem", "position": 2, "name": "Fluid clamp 레이아웃", "item": "https://css-utility-hub.kr/subpage/clamp-layout.html" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "clamp는 rem 대신 px만 지원하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "이 계산기는 뷰포트에 따른 픽셀 선형 보간에 맞춰져 있습니다. rem을 쓰려면 루트 폰트 크기를 기준으로 값을 별도 환산하는 편이 좋습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "타이포 크기에 clamp를 써도 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 다만 모듈러 스케일과 fluid 규칙을 함께 관리하려면 타이포 스케일 전용 도구를 병행하는 것을 권장합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "미디어 쿼리와 함께 사용해도 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네. 레이아웃 전환은 미디어 쿼리로, 세부 간격·갭은 clamp로 보간하는 혼합 패턴이 자주 쓰입니다."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script src="../assets/js/hub.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/tools/clamp-layout.js" defer></script>
+    <script src="../assets/js/tools/coming-soon.js" defer></script>
+    <script src="../assets/js/hub-layout.js" defer></script>
+    <script src="../assets/js/hub-bootstrap.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+    <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
+    <script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "1c927fd21c0f000";
+if(window.wcs) {
+  wcs_do();
+}
+</script>
+  </body>
+</html>

@@ -85,6 +85,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://css-utility-hub.kr/subpage/clamp-layout.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://css-utility-hub.kr/subpage/container.html</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
